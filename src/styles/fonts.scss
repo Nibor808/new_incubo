@@ -1,0 +1,28 @@
+@font-face {
+  font-family: roboto-lt;
+  src: url('./fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+  font-family: merriweather-lt;
+  src: url('./fonts/MerriweatherSans-Light.ttf');
+}
+
+@font-face {
+  font-family: merriweather;
+  src: url('./fonts/MerriweatherSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: quicksand-lt;
+  src: url('./fonts/Quicksand-Light.ttf');
+}
+
+@font-face {
+  font-family: quicksand;
+  src: url('./fonts/Quicksand-Regular.ttf');
+}
+
+body {
+  font-family: quicksand, sans-serif;
+}

@@ -1,0 +1,22 @@
+.portfolio {
+  //display: flex;
+  //align-items: center;
+  //flex-direction: column;
+  article {
+    padding-bottom: 40px;
+    img {
+      box-shadow: $boxShadow;
+    }
+    .badge {
+      padding: 0;
+      margin-bottom: 10px;
+    }
+    .images {
+      justify-content: center;
+      .col {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+node_modules
+*.log
+.swp
+build-prod/
+build-dev/
+
+src/webpack-assets.json
+.DS_Store
+.vscode/
+.idea/
+!src/logs/.gitkeep
+package-lock.json
+*.pdf
+*.env
+__snapshots__/

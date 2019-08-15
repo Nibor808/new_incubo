@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  align-items: flex-start;
+  nav {
+    background: $siteBackground;
+    .navbar-toggler {
+      border: 1px solid black;
+      .navbar-toggler-icon {
+        border: 1px solid black;
+        background: black;
+      }
+    }
+    ul.navbar-nav {
+      border-bottom: 2px solid $white;
+      li {
+        padding: 0 20px;
+        .dropdown-menu {
+          padding: 0;
+          border: none;
+          .dropdown-item {
+            @extend a;
+            background: $siteBackground;
+          }
+        }
+      }
+    }
+  }
+}
