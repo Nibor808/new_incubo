@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 export default () => {
-  const [ fName, setFName ] = useState('');
-  const [ lName, setLName ] = useState('');
+  const [ name, setName ] = useState('');
   const [ email, setEmail ] = useState('');
   const [ description, setDescription ] = useState('');
   const [ response, setResponse ] = useState('');
@@ -13,8 +12,7 @@ export default () => {
     const frm = document.getElementById('email_form');
 
     const info = {
-      fName,
-      lName,
+      name,
       email,
       description
     };
@@ -42,7 +40,7 @@ export default () => {
   return (
     <section className='contact'>
       <article className='row'>
-        <div className='col-7'>
+        <div className='col-6'>
           <h4>
             Have a Project you would like to discuss with us?
           </h4>
@@ -51,24 +49,13 @@ export default () => {
 
           <form onSubmit={sendMail} method='post' className='col' id='email_form'>
             <div className='form-group'>
-              <label htmlFor='fName'>First Name</label>
+              <label htmlFor='name'>Name</label>
               <input
                 type='text'
                 className='form-control'
-                id='fName'
-                name='quote[fName]'
-                onChange={ev => setFName(ev.target.value)}
-              />
-            </div>
-
-            <div className='form-group'>
-              <label htmlFor='lName'>Last Name</label>
-              <input
-                type='text'
-                className='form-control'
-                id='lName'
-                name='quote[lName]'
-                onChange={ev => setLName(ev.target.value)}
+                id='name'
+                name='quote[name]'
+                onChange={ev => setName(ev.target.value)}
               />
             </div>
 
@@ -85,12 +72,12 @@ export default () => {
             </div>
 
             <div className='form-group'>
-              <label htmlFor='description'>A short description of your project</label>
+              <label htmlFor='description'>Message</label>
               <textarea
                 rows={3}
                 className='form-control'
-                id='description'
-                name='quote[description]'
+                id='message'
+                name='quote[message]'
                 onChange={ev => setDescription(ev.target.value)}
               />
             </div>

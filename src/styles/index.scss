@@ -32,6 +32,8 @@ body {
   position: relative;
   min-height: 100%;
   height: auto !important;
+  border-left: 1px dashed grey;
+  border-right: 1px dashed grey;
   &:after {
     content: '';
     display: block;
@@ -39,7 +41,7 @@ body {
   }
 
   section {
-    padding: 40px 20px;
+    padding: 100px 0 40px 0;
   }
 }
 

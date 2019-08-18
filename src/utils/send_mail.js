@@ -2,7 +2,7 @@
 import nodemailer from 'nodemailer';
 
 export default async (req, res) => {
-  const { fName, lName, email, description } = req.body;
+  const { name, email, message } = req.body;
 
   const smtpConfig = {
     service: 'gmail',
@@ -26,8 +26,8 @@ export default async (req, res) => {
       to: 'Incubo Development Inquiry development@incubo.ca',
       subject: 'Test Incubo',
       html: `
-      <p>From: ${fName} ${lName}</p>
-      <p>${description}</p>
+      <p>From: ${name}</p>
+      <p>${message}</p>
     `
     });
 
