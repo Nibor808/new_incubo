@@ -4,7 +4,7 @@ export default [
   {
     title: '+3',
     badgeIcon: <a href='https://itunes.apple.com/ca/app/+3/id1095135903?mt=8' target='_blank'>
-      <img src='/images/incubo/appstorebadge.svg' id='badge' className='img-fluid' alt='app store badge' />
+      <img src='/images/appstorebadge.svg' id='badge' className='img-fluid' alt='app store badge' />
     </a>,
     text: () => {
       return [
@@ -23,15 +23,15 @@ export default [
       return (
         <div className='row'>
           <div className='col'>
-            <img src='/images/incubo/6-1.png' className='img-fluid' alt='+3 calculator' />
+            <img src='/images/6-1.png' className='img-fluid' alt='+3 calculator' />
           </div>
 
           <div className='col'>
-            <img src='/images/incubo/6-2.png' className='img-fluid' alt='+3 currency converter' />
+            <img src='/images/6-2.png' className='img-fluid' alt='+3 currency converter' />
           </div>
 
           <div className='col'>
-            <img src='/images/incubo/6-3.png' className='img-fluid' alt='+3 units converter' />
+            <img src='/images/6-3.png' className='img-fluid' alt='+3 units converter' />
           </div>
         </div>
       );
@@ -51,7 +51,7 @@ export default [
         </p>
       ];
     },
-    image: () => <img src='/images/incubo/jesstech-2.png' className='img-fluid' alt='jesstech website' />
+    image: () => <img src='/images/jesstech-2.png' className='img-fluid' alt='jesstech website' />
   },
   {
     title: 'Casemon',
@@ -70,7 +70,7 @@ export default [
         </p>
       ];
     },
-    image: () => <img src='/images/incubo/casemon-2.png' className='img-fluid' alt='casemon website' />
+    image: () => <img src='/images/casemon-2.png' className='img-fluid' alt='casemon website' />
   },
   {
     title: 'Lakeshore Electric',
@@ -80,6 +80,6 @@ export default [
       with them to bring their vision to life.
       Without the need for any backend Lakeshore Electric was built using HTML5, CSS3 and jQuery.
     </p>,
-    image: () => <img src='/images/incubo/lakeshore-2.png' className='img-fluid' alt='lakeshore electric website' />
+    image: () => <img src='/images/lakeshore-2.png' className='img-fluid' alt='lakeshore electric website' />
   }
 ];

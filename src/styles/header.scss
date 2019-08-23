@@ -3,24 +3,18 @@ header {
   align-items: flex-start;
   justify-content: center;
   nav {
-    background: $siteBackground;
-    .navbar-toggler {
-      border: 1px solid black;
-      .navbar-toggler-icon {
+    background: $white;
+    .container {
+      .navbar-toggler {
         border: 1px solid black;
-        background: black;
+        .navbar-toggler-icon {
+          border: 1px solid black;
+          background: black;
+        }
       }
-    }
-    ul.navbar-nav {
-      li {
-        padding: 0 20px;
-        .dropdown-menu {
-          padding: 0;
-          border: none;
-          .dropdown-item {
-            @extend a;
-            background: $siteBackground;
-          }
+      ul.navbar-nav {
+        li {
+          padding: 0 40px;
         }
       }
     }

@@ -1,53 +1,49 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default () => {
+export default (props) => {
+  const { toPortfolio, toContact } = props;
+
   return (
     <header>
-      <Link to='/'>
-        <img
-          src='images/incubo/incubo_logo_sm.png'
-          alt='incubo web solutions logo'
-          className='img-fluid'
-        />
-      </Link>
-      <nav className='navbar navbar-expand-lg'>
-        <button className='navbar-toggler'
-          type='button'
-          data-toggle='collapse'
-          data-target='#navbarSupportedContent'
-          aria-controls='navbarSupportedContent'
-          aria-expanded='false'
-          aria-label='Toggle navigation'>
-          <span className='navbar-toggler-icon' />
-        </button>
+      <nav className='navbar navbar-expand-lg fixed-top'>
+        <div className='container mx-auto'>
+          <button className='navbar-toggler'
+            type='button'
+            data-toggle='collapse'
+            data-target='#navbarSupportedContent'
+            aria-controls='navbarSupportedContent'
+            aria-expanded='false'
+            aria-label='Toggle navigation'>
+            <span className='navbar-toggler-icon' />
+          </button>
 
-        <div className='collapse navbar-collapse' id='navbarSupportedContent'>
-          <ul className='navbar-nav mr-auto'>
-            <li className='nav-item'>
-              <Link className='nav-link' to='/portfolio'>Portfolio</Link>
-            </li>
-            <li className='nav-item dropdown'>
-              <a className='nav-link dropdown-toggle'
-                href='#' id='navbarDropdown'
-                role='button'
-                data-toggle='dropdown'
-                aria-haspopup='true'
-                aria-expanded='false'>
-                Services
-              </a>
-              <div className='dropdown-menu' aria-labelledby='navbarDropdown'>
-                <Link className='dropdown-item' to='/personal'>Personal Web Site</Link>
-                <Link className='dropdown-item' to='/business'>Business Web Site</Link>
-              </div>
-            </li>
-            <li className='nav-item'>
-              <Link className='nav-link' to='/about_us'>About Us</Link>
-            </li>
-            <li className='nav-item'>
-              <Link className='nav-link' to='/contact'>Contact</Link>
-            </li>
-          </ul>
+          <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+            <Link to='/' className='navbar-brand'>
+              <img
+                src='images/incubo_logo_sm.png'
+                alt='incubo web solutions logo'
+                className='img-fluid'
+              />
+            </Link>
+
+            <ul className='navbar-nav'>
+              <li className='nav-item'>
+                <a
+                  className='nav-link'
+                  href='#'
+                  onClick={toPortfolio}
+                >Portfolio</a>
+              </li>
+              <li className='nav-item'>
+                <a
+                  className='nav-link'
+                  href='#'
+                  onClick={toContact}
+                >Contact</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>

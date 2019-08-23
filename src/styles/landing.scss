@@ -1,0 +1,42 @@
+.landing {
+  padding: 200px 0;
+  article {
+    padding: 40px 0;
+  }
+  .about-container {
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      border-radius: 50%;
+      box-shadow: $boxShadowMed;
+      margin-bottom: 10px;
+    }
+  }
+
+  .portfolio {
+    background: $grey;
+    .portfolio-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img:not(#badge) {
+        box-shadow: $boxShadowSm;
+      }
+      .portfolio-sidebar {
+
+      }
+      .portfolio-main {
+
+      }
+    }
+
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
