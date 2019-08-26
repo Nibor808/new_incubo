@@ -2,21 +2,16 @@ header {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  nav {
+  .navbar {
     background: $white;
-    .container {
-      .navbar-toggler {
-        border: 1px solid black;
-        .navbar-toggler-icon {
-          border: 1px solid black;
-          background: black;
-        }
+    .navbar-nav {
+      .nav-link {
+        padding-left: 40px;
       }
-      ul.navbar-nav {
-        li {
-          padding: 0 40px;
-        }
-      }
+    }
+    .navbar-toggler-icon {
+      border: 1px solid black;
+      background: black;
     }
   }
 }

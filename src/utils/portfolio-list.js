@@ -2,6 +2,43 @@ import React from 'react';
 
 export default [
   {
+    title: 'Ontario Divorce Resource',
+    text: () => {
+      return [
+        <p key='main1'>
+          ODR is a service that attempts to simplify the complex process of getting separated or divorced n Ontario.
+        </p>,
+        <p key='main2'>
+          It allows a user to complete most of the forms required by stepping through a series of questions.
+          The forms can then be, edited, downloaded as .docx, or faxed. Email is coming when the law allows.
+        </p>,
+        <p key='main3'>
+          ODR features the ability to ad and edit a digital signature, edit information
+          that is common to all forms in a central location, as well as an admin section allowing and admin user
+          to log in as another user, set a banner notification for all users, email all users, as well
+          as checking error logs and the status of any faxes sent.
+        </p>
+      ];
+    },
+    image: () => {
+      return (
+        <div className='row'>
+          <div className='col'>
+            <img src='/images/odr-full.png' className='img-fluid' alt='+3 calculator' />
+          </div>
+
+          <div className='col'>
+            <img src='/images/odr-forms.png' className='img-fluid' alt='+3 currency converter' />
+          </div>
+
+          <div className='col'>
+            <img src='/images/odr-new-forms.png' className='img-fluid' alt='+3 units converter' />
+          </div>
+        </div>
+      );
+    }
+  },
+  {
     title: '+3',
     badgeIcon: <a href='https://itunes.apple.com/ca/app/+3/id1095135903?mt=8' target='_blank'>
       <img src='/images/appstorebadge.svg' id='badge' className='img-fluid' alt='app store badge' />
