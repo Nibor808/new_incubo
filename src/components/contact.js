@@ -40,7 +40,7 @@ export default () => {
 
   return (
     <div className='col-8'>
-      <h4>Get in touch</h4>
+      <p>Text about getting in touch here.</p>
 
       {showResponse()}
 
@@ -80,7 +80,7 @@ export default () => {
         </div>
 
         <button type='submit'>submit</button>
-        <div className='g-recaptcha' data-sitekey='6LeEyAoUAAAAAE9Q2bEH_OvvcacIsDs3uBblmyZ2' data-theme='light' />
+        <div className='g-recaptcha' data-sitekey={`${process.env.CAPTCHA_KEY}`} data-theme='light' />
       </form>
     </div>
   );

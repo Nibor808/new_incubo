@@ -1,21 +1,19 @@
 /* -------------- GLOBALS -------------- */
 $icon-font-path: '/fonts/';
-$footerHeight: 100px;
-$fontColor: rgb(51, 51, 51);
-$siteBackground: rgb(250, 241, 216);
-$boxShadowSm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-$boxShadowMed: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-
 $white: rgb(255, 255, 255);
 $blue: rgb(102, 133, 230);
 $green: rgb(135, 237, 137);
 $yellow: rgb(238 ,219 ,81);
 $grey: rgb(225, 225, 225);
+$fontColor: rgb(51, 51, 51);
+$siteBackground: rgb(250, 241, 216);
+$boxShadowSm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+$boxShadowMed: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$glow: 0 0 8px $green;
 
 @import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import './fonts';
 @import './header';
-@import './footer';
 @import './landing';
 
 /* -------------- FORMATTING -------------- */
@@ -34,11 +32,6 @@ body {
   position: relative;
   min-height: 100%;
   height: auto !important;
-  &:after {
-    content: '';
-    display: block;
-    height: $footerHeight;
-  }
 }
 
 ul {
@@ -61,12 +54,14 @@ h6 {
 a {
   text-decoration: none;
   color: $blue;
+  transition: color .3s ease-in;
   &:hover,
-  &.active,
-  &:focus {
+  &:active {
     text-decoration: none;
-    color: $fontColor;
-    transition: color .3s ease-in;
+    color: $green;
+  }
+  &:focus {
+    color: $blue;
   }
 }
 

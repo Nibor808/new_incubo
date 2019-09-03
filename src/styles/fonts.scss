@@ -4,25 +4,21 @@
 }
 
 @font-face {
-  font-family: merriweather-lt;
-  src: url('./fonts/MerriweatherSans-Light.ttf');
-}
-
-@font-face {
-  font-family: merriweather;
-  src: url('./fonts/MerriweatherSans-Regular.ttf');
-}
-
-@font-face {
-  font-family: quicksand-lt;
-  src: url('./fonts/Quicksand-Light.ttf');
-}
-
-@font-face {
   font-family: quicksand;
   src: url('./fonts/Quicksand-Regular.ttf');
 }
 
+@font-face {
+  font-family: digital;
+  src: url('./fonts/digital.ttf');
+}
+
 body {
   font-family: quicksand, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+a {
+  font-family: roboto-lt, sans-serif;
+  letter-spacing: 0.75px;
 }

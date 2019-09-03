@@ -1,35 +1,69 @@
 .landing {
-  padding: 200px 0;
   article {
-    padding: 140px 0 70px 0;
-  }
-  .about-container {
-    padding-bottom: 80px;
-    display: flex;
-    justify-content: space-around;
-    .img-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      img {
-        border-radius: 50%;
-        box-shadow: $boxShadowMed;
-        margin-bottom: 20px;
-      }
-      p,
-      a {
-        font-size: 20px;
-      }
+    p,
+    a {
+      font-size: 20px;
     }
-    .about-text-box {
-      p {
-        font-size: 20px;
+  }
+  .about {
+    //background: $blue;
+    padding: 216px 0 80px 0;
+    .about-container {
+      p,
+      h2 {
+        color: $fontColor;
+      }
+      display: flex;
+      .img-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 40px;
+        img {
+          border-radius: 50%;
+          box-shadow: $boxShadowMed;
+          margin-bottom: 20px;
+        }
+      }
+      .about-text-box {
+        .time-div {
+          display: flex;
+          align-items: baseline;
+          .time-display {
+            margin-left: 5px;
+            background: rgb(0,0,0);
+            padding: 0 10px;
+            box-shadow: $boxShadowSm;
+            border-radius: 4px;
+            span {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              color: $green;
+              font-family: digital, sans-serif;
+              font-size: 24px;
+              text-shadow: $glow;
+              div {
+                font-family: quicksand, sans-serif;
+                font-size: 16px;
+                padding-right: 8px;
+                text-shadow: none;
+                &:last-of-type {
+                  padding-right: 0;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
 
   .portfolio {
-    background: $grey;
+    //background: $green;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 100px 0;
     .portfolio-container {
       display: flex;
       flex-direction: column;
@@ -38,15 +72,29 @@
         box-shadow: $boxShadowSm;
       }
       .portfolio-item {
-        padding: 40px 0;
+        padding-top: 80px;
+        a {
+          @extend a;
+          color: $blue !important;
+          &:hover,
+          &:active {
+            color: $white !important;
+          }
+          &:focus {
+            color: $blue !important;
+          }
+        }
       }
     }
-
   }
 
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .contact {
+    //background: $yellow;
+    padding: 100px 0;
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }

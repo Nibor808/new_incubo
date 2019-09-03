@@ -6,33 +6,48 @@ export default [
     text: () => {
       return [
         <p key='main1'>
-          ODR is a service that attempts to simplify the complex process of getting separated or divorced n Ontario.
+          ODR is a service that attempts to simplify the complex process of getting separated or divorced in Ontario.
         </p>,
         <p key='main2'>
           It allows a user to complete most of the forms required by stepping through a series of questions.
           The forms can then be, edited, downloaded as .docx, or faxed. Email is coming when the law allows.
         </p>,
         <p key='main3'>
-          ODR features the ability to ad and edit a digital signature, edit information
+          ODR features the ability to add and edit a digital signature, edit information
           that is common to all forms in a central location, as well as an admin section allowing and admin user
           to log in as another user, set a banner notification for all users, email all users, as well
           as checking error logs and the status of any faxes sent.
         </p>
       ];
     },
-    image: () => {
+    image: (handleClick) => {
       return (
         <div className='row'>
           <div className='col'>
-            <img src='/images/odr-full.png' className='img-fluid' alt='+3 calculator' />
+            <img
+              src='/images/odr-full.png'
+              className='img-fluid'
+              alt='Ontario Divorce Resource Landing Page'
+              onClick={(ev) => handleClick(ev)}
+            />
           </div>
 
           <div className='col'>
-            <img src='/images/odr-forms.png' className='img-fluid' alt='+3 currency converter' />
+            <img
+              src='/images/odr-forms.png'
+              className='img-fluid'
+              alt='Ontario Divorce Resource Forms List'
+              onClick={(ev) => handleClick(ev)}
+            />
           </div>
 
           <div className='col'>
-            <img src='/images/odr-new-forms.png' className='img-fluid' alt='+3 units converter' />
+            <img
+              src='/images/odr-new-forms.png'
+              className='img-fluid'
+              alt='Ontario Divorce Resource New Forms'
+              onClick={(ev) => handleClick(ev)}
+            />
           </div>
         </div>
       );
@@ -56,19 +71,34 @@ export default [
         </p>
       ];
     },
-    image: () => {
+    image: (handleClick) => {
       return (
         <div className='row'>
           <div className='col'>
-            <img src='/images/6-1.png' className='img-fluid' alt='+3 calculator' />
+            <img
+              src='/images/6-1.png'
+              className='img-fluid'
+              alt='+3 Calculator'
+              onClick={(ev) => handleClick(ev)}
+            />
           </div>
 
           <div className='col'>
-            <img src='/images/6-2.png' className='img-fluid' alt='+3 currency converter' />
+            <img
+              src='/images/6-2.png'
+              className='img-fluid'
+              alt='+3 Currency Converter'
+              onClick={(ev) => handleClick(ev)}
+            />
           </div>
 
           <div className='col'>
-            <img src='/images/6-3.png' className='img-fluid' alt='+3 units converter' />
+            <img
+              src='/images/6-3.png'
+              className='img-fluid'
+              alt='+3 Units Converter'
+              onClick={(ev) => handleClick(ev)}
+            />
           </div>
         </div>
       );
@@ -88,7 +118,7 @@ export default [
         </p>
       ];
     },
-    image: () => <img src='/images/jesstech-2.png' className='img-fluid' alt='jesstech website' />
+    image: (handleClick) => <img src='/images/jesstech-2.png' className='img-fluid' alt='Jesstech Landing Page' onClick={(ev) => handleClick(ev)} />
   },
   {
     title: 'Casemon',
@@ -107,7 +137,7 @@ export default [
         </p>
       ];
     },
-    image: () => <img src='/images/casemon-2.png' className='img-fluid' alt='casemon website' />
+    image: (handleClick) => <img src='/images/casemon-2.png' className='img-fluid' alt='Casemon Landing Page' onClick={(ev) => handleClick(ev)} />
   },
   {
     title: 'Lakeshore Electric',
@@ -117,6 +147,6 @@ export default [
       with them to bring their vision to life.
       Without the need for any backend Lakeshore Electric was built using HTML5, CSS3 and jQuery.
     </p>,
-    image: () => <img src='/images/lakeshore-2.png' className='img-fluid' alt='lakeshore electric website' />
+    image: (handleClick) => <img src='/images/lakeshore-2.png' className='img-fluid' alt='Lakeshore Electric Landing Page' onClick={(ev) => handleClick(ev)} />
   }
 ];

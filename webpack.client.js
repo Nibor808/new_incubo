@@ -1,4 +1,4 @@
-require('node-env-file')('./.env');
+const Dotenv = require('dotenv-webpack');
 const path = require('path');
 const webpack = require('webpack');
 const AssetsPlugin = require('assets-webpack-plugin');
@@ -24,6 +24,10 @@ if (DEV) {
 const entry = `${baseDir}/index.js`;
 
 const plugins = [
+  new Dotenv({
+    path: './.env',
+    safe: false
+  }),
   new webpack.EnvironmentPlugin(['DEPLOY_MODE']),
   new webpack.ProvidePlugin({
     jQuery: 'jquery',
