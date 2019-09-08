@@ -32,7 +32,7 @@ export default (props) => {
             <a href='#' className='navbar-brand'>
               <img
                 id='logo-img'
-                src='images/incubo_logo_copy.png'
+                src='images/incubo_logo.png'
                 alt='incubo web solutions logo'
                 className='img-fluid'
                 onClick={toTop}

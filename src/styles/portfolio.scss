@@ -1,0 +1,44 @@
+.portfolio {
+  //border-top: 1px solid black;
+  //border-bottom: 1px solid black;
+  padding: 120px 0;
+  .header-container {
+    padding: 0;
+  }
+  .portfolio-container {
+    margin-top: 40px;
+    .sidebar2017 {
+      background: $blue;
+      display: flex;
+      justify-content: center;
+    }
+    .sidebar2016 {
+      display: flex;
+      justify-content: center;
+      background: $green;
+    }
+    img:not(#badge) {
+      box-shadow: $boxShadowSm;
+    }
+    .portfolio-item {
+      margin-bottom: 80px;
+      margin-left: 20px;
+      a {
+        @extend a;
+        color: $blue !important;
+        &:hover,
+        &:active {
+          color: $white !important;
+        }
+        &:focus {
+          color: $blue !important;
+        }
+      }
+    }
+    .items2016 {
+      .portfolio-item:last-of-type {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}

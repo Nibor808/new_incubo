@@ -25,7 +25,7 @@ const entry = `${baseDir}/index.js`;
 
 const plugins = [
   new Dotenv({
-    path: './.env',
+    path: path.resolve(__dirname, './.env'),
     safe: false
   }),
   new webpack.EnvironmentPlugin(['DEPLOY_MODE']),

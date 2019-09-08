@@ -1,20 +1,47 @@
 import React, { useState } from 'react';
+import validateForm from '../utils/validate_form';
 
 export default () => {
   const [ name, setName ] = useState('');
   const [ email, setEmail ] = useState('');
-  const [ description, setDescription ] = useState('');
+  const [ message, setMessage ] = useState('');
   const [ response, setResponse ] = useState('');
+  const [ error, setError ] = useState('');
+  const [ nameErrorBorder, setNameErrorBorder ] = useState('');
+  const [ emailErrorBorder, setEmailErrorBorder ] = useState('');
+  const [ messageErrorBorder, setMessageErrorBorder ] = useState('');
 
-  const sendMail = (ev) => {
+  const sendMail = async (ev) => {
     ev.preventDefault();
 
-    const frm = document.getElementById('email_form');
+    const frm = document.getElementById('email-form');
+
+    const frmError = await validateForm(name, email, message);
+
+    const ERROR_BORDER = '1px solid red';
+
+    if (frmError) {
+      switch (frmError.type) {
+        case 'name':
+          setNameErrorBorder(ERROR_BORDER);
+          break;
+        case 'email':
+          setEmailErrorBorder(ERROR_BORDER);
+          break;
+        case 'message':
+          setMessageErrorBorder(ERROR_BORDER);
+          break;
+        default:
+          setNameErrorBorder('');
+      }
+
+      return setError(frmError.error);
+    }
 
     const info = {
       name,
       email,
-      description
+      message
     };
 
     fetch('/sendmail', {
@@ -28,60 +55,88 @@ export default () => {
       .then(response => {
         setResponse(response);
         frm.reset();
+
+        setTimeout(() => {
+          setResponse('');
+        }, 3000);
       })
       .catch(err => setResponse(err));
   };
 
   const showResponse = () => {
     if (response) {
-      return <div>{response.ok || response.error}</div>;
+      return response.ok ? <p className='success'>{response.ok}</p> : <p className='error'>{response.error}</p>;
     }
   };
 
+  const clearError = () => {
+    setError('');
+    setNameErrorBorder('');
+    setEmailErrorBorder('');
+    setMessageErrorBorder('');
+  };
+
   return (
-    <div className='col-8'>
-      <p>Text about getting in touch here.</p>
+    <div className='row'>
+      <div className='col-1 sidebar' />
+      <div className='col-6'>
+        <p>Want to work together or just chat about development?</p>
+        <p>Get in touch!</p>
+        {error ? <p className='error'>{error}</p> : null}
 
-      {showResponse()}
+        {showResponse()}
 
-      <form onSubmit={sendMail} method='post' className='col' id='email_form'>
-        <div className='form-group'>
-          <label htmlFor='name'>Name</label>
-          <input
-            type='text'
-            className='form-control'
-            id='name'
-            name='quote[name]'
-            onChange={ev => setName(ev.target.value)}
-          />
-        </div>
+        <form onSubmit={sendMail} method='post' className='col' id='email-form'>
+          <div className='form-group'>
+            <label htmlFor='name'>Name</label>
+            <input
+              type='text'
+              className='form-control'
+              id='name'
+              name='quote[name]'
+              onChange={ev => {
+                setName(ev.target.value);
+                clearError();
+              }}
+              style={{ border: nameErrorBorder }}
+            />
+          </div>
 
-        <div className='form-group'>
-          <label htmlFor='email'>Email</label>
-          <input
-            type='email'
-            className='form-control'
-            id='email'
-            name='quote[email]'
-            onChange={ev => setEmail(ev.target.value)}
-          />
-          <small>We will not share your info with anyone!</small>
-        </div>
+          <div className='form-group'>
+            <label htmlFor='email'>Email</label>
+            <input
+              type='email'
+              className='form-control'
+              id='email'
+              name='quote[email]'
+              onChange={ev => {
+                setEmail(ev.target.value);
+                clearError();
+              }}
+              style={{ border: emailErrorBorder }}
+            />
+            <small>We will not share your info with anyone. Full stop.</small>
+          </div>
 
-        <div className='form-group'>
-          <label htmlFor='description'>Message</label>
-          <textarea
-            rows={3}
-            className='form-control'
-            id='message'
-            name='quote[message]'
-            onChange={ev => setDescription(ev.target.value)}
-          />
-        </div>
+          <div className='form-group'>
+            <label htmlFor='description'>Message</label>
+            <textarea
+              rows={3}
+              className='form-control'
+              id='message'
+              name='quote[message]'
+              onChange={ev => {
+                setMessage(ev.target.value);
+                clearError();
+              }}
+              style={{ border: messageErrorBorder }}
+            />
+          </div>
 
-        <button type='submit'>submit</button>
-        <div className='g-recaptcha' data-sitekey={`${process.env.CAPTCHA_KEY}`} data-theme='light' />
-      </form>
+          <button type='submit'>submit</button>
+          <div className='g-recaptcha' data-sitekey={`${process.env.CAPTCHA_KEY}`} data-theme='light' />
+        </form>
+      </div>
     </div>
   );
 };

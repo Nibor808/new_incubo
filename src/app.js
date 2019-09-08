@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 import About from './components/about.js';
 import Contact from './components/contact';
 import PortfolioItem from './components/portfolio_item';
-import portfolioList from './utils/portfolio_list';
+import { list2016, list2017 } from './utils/portfolio_list';
 import modalStyle from './utils/modal_style';
 
 export default () => {
@@ -90,20 +90,54 @@ export default () => {
         </article>
 
         <article className='portfolio' ref={portfolioRef}>
+          <div className='container header-container'>
+            <div className='row'>
+              <div className='col-12'>
+                <h1>Portfolio</h1>
+                <a href='https://github.com/Nibor808' target='_blank'>github</a>
+              </div>
+            </div>
+          </div>
           <div className='container portfolio-container'>
-            <h1>Portfolio</h1>
-            {portfolioList.map((item, index) => <PortfolioItem
-              key={`portfolio-item-${index}`}
-              item={item}
-              index={index}
-              handleClick={handleClick}
-            />)}
+            <div className='row'>
+              <div className='col-1 sidebar2017'>
+                <h3>2017</h3>
+              </div>
+              <div className='col-11 portfolio-items'>
+                {list2017.map((item, index) => <PortfolioItem
+                  key={`portfolio-item-${index}`}
+                  item={item}
+                  index={index}
+                  handleClick={handleClick}
+                />)}
+              </div>
+            </div>
+
+            <div className='row'>
+              <div className='col-1 sidebar2016'>
+                <h3>2016</h3>
+              </div>
+              <div className='col-11 portfolio-items items2016'>
+                {list2016.map((item, index) => <PortfolioItem
+                  key={`portfolio-item-${index}`}
+                  item={item}
+                  index={index}
+                  handleClick={handleClick}
+                />)}
+              </div>
+            </div>
           </div>
         </article>
 
         <article className='contact' ref={contactRef}>
+          <div className='container header-container'>
+            <div className='row'>
+              <div className='col-12'>
+                <h1>Contact</h1>
+              </div>
+            </div>
+          </div>
           <div className='container contact-container'>
-            <h1>Contact</h1>
             <Contact />
           </div>
         </article>

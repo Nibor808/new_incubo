@@ -3,7 +3,7 @@ import moment from 'moment';
 
 export default () => {
   const [displayTime, setDisplayTime ] = useState('');
-  const START_DATE = moment([2015, 0, 1]);
+  const START_DATE = moment([2016, 0, 1]);
 
   const displayTimeSinceStart = () => {
     const timeSinceStartDate = moment().diff(START_DATE);
@@ -47,8 +47,8 @@ export default () => {
         <p>Building things for work and fun for</p>
         <div className='time-display'><span dangerouslySetInnerHTML={createMarkup()} /></div>
       </div>
-      <p>Focusing primarily on Node + React with hobby projects in Elixir, Go and Java.</p>
-      <p>Other stuff and things.</p>
+      <p>Focusing primarily on Node + React with hobby projects in Elixir, Go and Java</p>
+      <p>Other things to say</p>
     </div>
   ];
 };

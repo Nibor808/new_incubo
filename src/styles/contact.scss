@@ -1,0 +1,29 @@
+.contact {
+  padding-bottom: 190px;
+  .header-container {
+    padding: 0;
+  }
+  .contact-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    button {
+      box-shadow: $boxShadowSm;
+      background: $blue;
+      color: $white;
+      border-radius: 0;
+      border: none;
+      margin-bottom: 40px;
+      outline: none;
+    }
+    .error {
+      color: red;
+    }
+    .success {
+      color: $green;
+    }
+    .sidebar {
+      background: $yellow;
+    }
+  }
+}
