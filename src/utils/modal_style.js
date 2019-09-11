@@ -6,10 +6,10 @@ export default {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(129,130,145,0.5)'
+    backgroundColor: 'rgba(129,130,145,0.8)'
   },
   content: {
-    maxWidth: '50%',
+    maxWidth: '75%',
     maxHeight: '90%',
     top: '50%',
     left: '50%',

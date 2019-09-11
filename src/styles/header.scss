@@ -4,14 +4,17 @@ header {
   justify-content: center;
   .navbar {
     background: $white;
-    .navbar-nav {
-      .nav-link {
-        padding-left: 40px;
+    .container {
+      padding: 0;
+      .navbar-nav {
+        .nav-link {
+          padding-left: 40px;
+        }
       }
-    }
-    .navbar-toggler-icon {
-      border: 1px solid black;
-      background: black;
+      .navbar-toggler-icon {
+        border: 1px solid black;
+        background: black;
+      }
     }
   }
 }

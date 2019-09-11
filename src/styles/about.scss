@@ -1,48 +1,30 @@
 .about {
-  padding: 216px 0 80px 0;
+  padding: 220px 0 0 0;
+
   .about-container {
-    display: flex;
-    .img-box {
+    padding: 0;
+
+    .top-box {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      padding-right: 40px;
-      img {
-        border-radius: 50%;
-        box-shadow: $boxShadowMed;
-        margin-bottom: 20px;
-      }
-    }
-    .about-text-box {
-      .time-div {
+      justify-content: space-between;
+
+      .img-box {
         display: flex;
-        align-items: baseline;
-        .time-display {
-          margin-left: 5px;
-          background: rgb(0,0,0);
-          padding: 0 10px;
-          //box-shadow: $boxShadowSm;
-          border-radius: 5px;
-          span {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: $green;
-            font-family: digital, sans-serif;
-            font-size: 24px;
-            text-shadow: $glow;
-            div {
-              font-family: quicksand, sans-serif;
-              font-size: 16px;
-              padding-right: 8px;
-              text-shadow: none;
-              &:last-of-type {
-                padding-right: 0;
-              }
-            }
-          }
+        flex-direction: column;
+        align-items: center;
+        margin-right: 40px;
+
+        img {
+          border-radius: 50%;
+          box-shadow: $boxShadowMed;
+          margin-bottom: 20px;
         }
       }
+    }
+
+    .bottom-box {
+      padding-top: 60px;
     }
   }
 }

@@ -8,14 +8,14 @@ export const list2017 =  [
         <p key='main1'>
           <a href='https://www.ontariodivorceresource.ca/' target='_blank'>ODR</a> is
           a service that simplifies the complex process of getting divorced or separated in Ontario.
-          (currently in development and behind an authorization wall)
+          <small>(currently in development and behind an authorization wall)</small>
         </p>,
         <p key='main2'>
           It allows a user to complete most of the forms required by stepping through a series of questions.
           The forms can then be, edited, downloaded as .docx, or faxed. Email is coming when the law allows.
         </p>,
         <p key='main3'>
-          ODR features the ability to add and edit a digital signature, edit information
+          ODR features auto save and resume functionality, the ability to add and edit a digital signature, edit information
           that is common to all forms in a central location, as well as an admin section allowing and admin user
           to log in as another user, set a banner notification for all users, email all users, as well
           as checking error logs and the status of any faxes sent.
@@ -48,9 +48,9 @@ export const list2017 =  [
 
           <div className='col'>
             <img
-              src='/images/odr-new-forms.png'
+              src='/images/odr-access-scheduler.png'
               className='img-fluid'
-              alt='Ontario Divorce Resource New Forms'
+              alt='Ontario Divorce Resource Access Scheduler'
               onClick={(ev) => handleClick(ev)}
             />
           </div>
@@ -68,14 +68,14 @@ export const list2017 =  [
         </p>,
         <p key='main2'>
           It allows a user to search all posts by keyword, comment on posts and reply to comments, ask a question,
-          a limited CMS for creating posts
+          with a limited CMS on the admin page for creating posts.
         </p>,
         <p key='main3'>
           It features JSON Web Token authentication through Passport, MySQL with Knex query builder, and Webpack.
         </p>
       ];
     },
-    image: (handleClick) => <img src='/images/jesstech.png' className='img-fluid' alt='Jesstech Landing Page' onClick={(ev) => handleClick(ev)} />
+    image: () => <img src='/images/jesstech.png' className='img-fluid' alt='Jesstech Landing Page' />
   },
   {
     title: 'Lakeshore Electric',
@@ -85,7 +85,7 @@ export const list2017 =  [
       with them to bring their vision to life.
       Without the need for any backend Lakeshore Electric was built using HTML5, CSS3 and jQuery.
     </p>,
-    image: (handleClick) => <img src='/images/lakeshore.png' className='img-fluid' alt='Lakeshore Electric Landing Page' onClick={(ev) => handleClick(ev)} />
+    image: () => <img src='/images/lakeshore.png' className='img-fluid' alt='Lakeshore Electric Landing Page' />
   },
   {
     title: 'Incubo Web Solutions',
@@ -93,7 +93,7 @@ export const list2017 =  [
       The old Incubo site. The black and white design was complimented by colourising
       the link squares on rollover. Built with HTML5, Handlebars, CSS3, and jQuery.
     </p>,
-    image: (handleClick) => <img src='/images/incubo_old.png' className='img-fluid' alt='Incubo Landing Page' onClick={(ev) => handleClick(ev)} />
+    image: () => <img src='/images/incubo_old.png' className='img-fluid' alt='Incubo Landing Page' />
   }
 ];
 
@@ -115,7 +115,7 @@ export const list2016 = [
         </p>
       ];
     },
-    image: (handleClick) => <img src='/images/casemon.png' className='img-fluid' alt='Casemon Landing Page' onClick={(ev) => handleClick(ev)} />
+    image: () => <img src='/images/casemon.png' className='img-fluid' alt='Casemon Landing Page' />
   },
   {
     title: '+3',

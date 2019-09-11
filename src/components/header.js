@@ -10,13 +10,13 @@ export default (props) => {
       topRef.current.scrollIntoView({
         behavior: 'smooth'
       });
-    }, 75);
+    }, 50);
   };
 
   return (
     <header key='app1' ref={topRef}>
       <nav className='navbar navbar-expand-lg fixed-top'>
-        <div className='col-10 offset-1'>
+        <div className='container'>
           <button className='navbar-toggler'
             style={{ border: '1px solid black' }}
             type='button'

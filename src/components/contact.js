@@ -65,7 +65,8 @@ export default () => {
 
   const showResponse = () => {
     if (response) {
-      return response.ok ? <p className='success'>{response.ok}</p> : <p className='error'>{response.error}</p>;
+      return response.error ? <p className='error'>{response.error}</p> :
+        <p className='success'>{response.ok}</p>;
     }
   };
 
@@ -78,15 +79,13 @@ export default () => {
 
   return (
     <div className='row'>
-      <div className='col-1 sidebar' />
-      <div className='col-6'>
-        <p>Want to work together or just chat about development?</p>
-        <p>Get in touch!</p>
+      <div className='col-1 col-md-1 sidebar' />
+      <div className='col-11 col-md-6'>
         {error ? <p className='error'>{error}</p> : null}
 
         {showResponse()}
 
-        <form onSubmit={sendMail} method='post' className='col' id='email-form'>
+        <form onSubmit={sendMail} method='post' id='email-form'>
           <div className='form-group'>
             <label htmlFor='name'>Name</label>
             <input
@@ -133,7 +132,7 @@ export default () => {
             />
           </div>
 
-          <button type='submit'>submit</button>
+          <button type='submit'>Send</button>
           <div className='g-recaptcha' data-sitekey={`${process.env.CAPTCHA_KEY}`} data-theme='light' />
         </form>
       </div>

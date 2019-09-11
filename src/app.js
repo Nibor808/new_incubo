@@ -1,4 +1,4 @@
-import React, { useState }   from 'react';
+import React, { useState, useEffect }   from 'react';
 import Header from './components/header';
 import Modal from 'react-modal';
 import About from './components/about.js';
@@ -10,6 +10,16 @@ import modalStyle from './utils/modal_style';
 export default () => {
   const [ isOpen, setIsOpen ] = useState(false);
   const [ event, setEvent ] = useState();
+  const [ bottomPadding, setBottomPadding ] = useState('');
+
+  const height = window.innerHeight;
+
+  if (height) {
+    useEffect(() => {
+      if (height <= 781) setBottomPadding('0');
+      else setBottomPadding(`${height * 0.18}px`);
+    });
+  }
 
   window.onscroll = () => {
     if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
@@ -101,7 +111,7 @@ export default () => {
           <div className='container portfolio-container'>
             <div className='row'>
               <div className='col-1 sidebar2017'>
-                <h3>2017</h3>
+                <p>2017</p>
               </div>
               <div className='col-11 portfolio-items'>
                 {list2017.map((item, index) => <PortfolioItem
@@ -115,7 +125,7 @@ export default () => {
 
             <div className='row'>
               <div className='col-1 sidebar2016'>
-                <h3>2016</h3>
+                <p>2016</p>
               </div>
               <div className='col-11 portfolio-items items2016'>
                 {list2016.map((item, index) => <PortfolioItem
@@ -129,11 +139,13 @@ export default () => {
           </div>
         </article>
 
-        <article className='contact' ref={contactRef}>
+        <article className='contact' style={{ paddingBottom: bottomPadding }} ref={contactRef}>
           <div className='container header-container'>
             <div className='row'>
               <div className='col-12'>
                 <h1>Contact</h1>
+                <p>Want to work together?</p>
+                <p>Get in touch!</p>
               </div>
             </div>
           </div>

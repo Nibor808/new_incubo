@@ -1,5 +1,4 @@
 .contact {
-  padding-bottom: 190px;
   .header-container {
     padding: 0;
   }
@@ -23,7 +22,7 @@
       color: $green;
     }
     .sidebar {
-      background: $yellow;
+      border-right: 10px solid $yellow;
     }
   }
 }

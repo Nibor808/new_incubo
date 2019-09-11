@@ -42,6 +42,15 @@ ul {
   padding: 0;
 }
 
+.sidebar {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+  p {
+    font-size: 22px;
+  }
+}
+
 /* -------------- COLORS -------------- */
 /* Fix Safari's font weight issue */
 h1,
