@@ -1,5 +1,5 @@
 .about {
-  padding: 220px 0 0 0;
+  padding-top: 210px;
 
   .about-container {
     padding: 0;
@@ -13,7 +13,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-right: 40px;
 
         img {
           border-radius: 50%;
@@ -24,7 +23,7 @@
     }
 
     .bottom-box {
-      padding-top: 60px;
+      padding-top: 50px;
     }
   }
 }

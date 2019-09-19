@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import moment from 'moment';
 
 export default () => {
-  const [displayTime, setDisplayTime ] = useState('');
+  const [infoDisplay, setInfoDisplay ] = useState('');
   const START_DATE = moment([2016, 0, 1]);
 
-  const displayTimeSinceStart = () => {
+  const getTime = () => {
     const timeSinceStartDate = moment().diff(START_DATE);
 
     const years = moment.duration(timeSinceStartDate).years();
@@ -15,10 +15,34 @@ export default () => {
     const minutes = moment.duration(timeSinceStartDate).minutes();
     const seconds = moment.duration(timeSinceStartDate).seconds();
 
-    setDisplayTime(
+    return {
+      years,
+      months,
+      days,
+      hours,
+      minutes,
+      seconds
+    };
+  };
+  
+  const renderInfoDisplay = () => {
+    const {
+      years,
+      months,
+      days,
+      hours,
+      minutes,
+      seconds
+    } = getTime();
+    
+    setInfoDisplay(
       `<pre>
-const stats = {
-  "location": "Peterborough, ON",
+const STATS = {
+  "location": {
+    "city": "Peterborough",
+    "province": "Ontario",
+    "country": "Canada"
+  },
   "time_active": {
     "years": ${years},
     "months": ${months},
@@ -37,32 +61,32 @@ const stats = {
     );
   };
 
-  const createMarkup = () => {
-    return { __html: displayTime };
+  const createInfoMarkup = () => {
+    return { __html: infoDisplay };
   };
 
-  const dateCounter = () => {
+  const callDisplay = () => {
     setInterval(() => {
-      displayTimeSinceStart();
+      renderInfoDisplay();
     },1000);
   };
 
   return (
     <div className='row'>
-      {dateCounter()}
+      {callDisplay()}
 
-      <div className='col-sm-8 top-box'>
+      <div className='col-sm-10 col-xl-8 top-box'>
         <div className='img-box'>
           <img src='/images/robin.jpg' alt='me' height='300px' width='300px' className='img-fluid'/>
           <h2>Robin Erickson</h2>
           <p>web developer</p>
         </div>
 
-        <span dangerouslySetInnerHTML={createMarkup()}/>
+        <span dangerouslySetInnerHTML={createInfoMarkup()}/>
       </div>
 
-      <div className='col-md-9 bottom-box'>
-        <p>Focusing primarily on Node + React with hobby projects in Elixir, Go and Java</p>
+      <div className='col-sm-10 bottom-box'>
+        <p>Focusing primarily on Node + React with hobby projects in Elixir and Go</p>
       </div>
     </div>
   );

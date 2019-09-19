@@ -2,7 +2,7 @@ import React, { useState, useEffect }   from 'react';
 import Header from './components/header';
 import Modal from 'react-modal';
 import About from './components/about.js';
-import Contact from './components/contact';
+import Contact from './components/email_form';
 import PortfolioItem from './components/portfolio_item';
 import { list2016, list2017 } from './utils/portfolio_list';
 import modalStyle from './utils/modal_style';
@@ -11,12 +11,14 @@ export default () => {
   const [ isOpen, setIsOpen ] = useState(false);
   const [ event, setEvent ] = useState();
   const [ bottomPadding, setBottomPadding ] = useState('');
-
+  const portfolioRef = React.createRef();
+  const contactRef = React.createRef();
   const height = window.innerHeight;
 
   if (height) {
     useEffect(() => {
       if (height <= 781) setBottomPadding('0');
+      else if (height > 781 && height <= 839) setBottomPadding(`${height * 0.07}px`);
       else setBottomPadding(`${height * 0.18}px`);
     });
   }
@@ -27,9 +29,6 @@ export default () => {
       document.getElementById('logo-img').style.transition = '0.4s';
     } else document.getElementById('logo-img').style.height = '110px';
   };
-
-  const portfolioRef = React.createRef();
-  const contactRef = React.createRef();
 
   const toPortfolio = (ev) => {
     ev.preventDefault();
@@ -93,9 +92,7 @@ export default () => {
 
         <article className='about'>
           <div className='container about-container'>
-            <About
-              toContact={toContact}
-            />
+            <About toContact={toContact} />
           </div>
         </article>
 
@@ -108,12 +105,14 @@ export default () => {
               </div>
             </div>
           </div>
+
           <div className='container portfolio-container'>
             <div className='row'>
-              <div className='col-1 sidebar2017'>
+              <div className='col-sm-2 col-md-1 sidebar2017'>
                 <p>2017</p>
               </div>
-              <div className='col-11 portfolio-items'>
+
+              <div className='col-sm-10 col-md-11 portfolio-items'>
                 {list2017.map((item, index) => <PortfolioItem
                   key={`portfolio-item-${index}`}
                   item={item}
@@ -124,10 +123,11 @@ export default () => {
             </div>
 
             <div className='row'>
-              <div className='col-1 sidebar2016'>
+              <div className='col-sm-2 col-md-1 sidebar2016'>
                 <p>2016</p>
               </div>
-              <div className='col-11 portfolio-items items2016'>
+
+              <div className='col-sm-10 col-md-11 portfolio-items items2016'>
                 {list2016.map((item, index) => <PortfolioItem
                   key={`portfolio-item-${index}`}
                   item={item}
@@ -149,6 +149,7 @@ export default () => {
               </div>
             </div>
           </div>
+
           <div className='container contact-container'>
             <Contact />
           </div>

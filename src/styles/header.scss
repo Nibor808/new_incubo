@@ -6,6 +6,9 @@ header {
     background: $white;
     .container {
       padding: 0;
+      .nav-item:last-child {
+       margin-left: 30px;
+      }
       .navbar-nav {
         .nav-link {
           padding-left: 40px;

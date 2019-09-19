@@ -31,7 +31,7 @@ export default async (req, res) => {
     `
     });
 
-    res.send({ ok: 'Your email was sent' });
+    res.send({ ok: 'Thanks got it!' });
   } catch (err) {
     logger.error(err);
     res.send({ error: 'There was a problem sending your email. Please try again later.' });

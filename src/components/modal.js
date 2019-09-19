@@ -1,19 +1,22 @@
 import React from 'react';
 import Modal from 'react-modal';
-
+import modalStyle from '../utils/modal_style';
 
 export default (props) => {
+  const { isOpen, title, src } = props;
+
   return (
     <Modal
       appElement={document.getElementById('root')}
-      isOpen={props.isOpen}
+      isOpen={isOpen}
       style={modalStyle}
       contentLabel='Banner Notification'
     >
-      <h3><strong>{props.title}</strong></h3>
+      <h3><strong>{title}</strong></h3>
 
       <img
-        src={props.src}
+        src={src}
+        alt={title}
       />
     </Modal>
   );

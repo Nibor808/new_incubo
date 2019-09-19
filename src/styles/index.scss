@@ -4,6 +4,7 @@ $white: rgb(255, 255, 255);
 $blue: rgb(102, 133, 230);
 $green: rgb(135, 237, 137);
 $yellow: rgb(238 ,219 ,81);
+$red: rgb(211, 0, 57);
 $grey: rgb(225, 225, 225);
 $fontColor: rgb(51, 51, 51);
 $siteBackground: rgb(250, 241, 216);
@@ -95,3 +96,49 @@ ul > li {
 }
 
 /* MEDIA QUERIES */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .about {
+    padding-top: 120px;
+
+    .about-container {
+      padding: 0 15px;
+    }
+  }
+
+  .landing {
+    article {
+      p,
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .portfolio {
+    .portfolio-container {
+
+      .sidebar2017 {
+        border-right: 0;
+        padding-left: 15px;
+        border-bottom: 5px solid $blue;
+      }
+
+      .sidebar2016 {
+        border-right: 0;
+        padding-left: 15px;
+        border-bottom: 5px solid $green;
+      }
+
+      .portfolio-item {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .portfolio,
+  .contact {
+    .header-container {
+      padding: 0 15px;
+    }
+  }
+}

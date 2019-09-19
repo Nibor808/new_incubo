@@ -18,13 +18,30 @@
       border-right: 10px solid $green;
     }
 
-    img:not(#badge) {
-      box-shadow: $boxShadowSm;
-    }
-
     .portfolio-item {
       margin-bottom: 80px;
       margin-left: 20px;
+
+      .portfolio-item-head {
+        display: flex;
+        align-items: center;
+
+        a {
+          padding-left: 20px;
+          font-size: 16px;
+        }
+      }
+
+      img:not(#badge) {
+        box-shadow: $boxShadowSm;
+        &.clickable {
+          cursor: pointer;
+        }
+      }
+
+      #badge {
+        margin-bottom: 10px;
+      }
 
       a {
         @extend a;
@@ -38,6 +55,7 @@
         }
       }
     }
+
     .items2016 {
       .portfolio-item:last-of-type {
         margin-bottom: 0 !important;

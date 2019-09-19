@@ -6,7 +6,9 @@ export default () => {
   const [ email, setEmail ] = useState('');
   const [ message, setMessage ] = useState('');
   const [ response, setResponse ] = useState('');
-  const [ error, setError ] = useState('');
+  const [ nameError, setNameError ] = useState('');
+  const [ emailError, setEmailError ] = useState('');
+  const [ messageError, setMessageError ] = useState('');
   const [ nameErrorBorder, setNameErrorBorder ] = useState('');
   const [ emailErrorBorder, setEmailErrorBorder ] = useState('');
   const [ messageErrorBorder, setMessageErrorBorder ] = useState('');
@@ -18,24 +20,22 @@ export default () => {
 
     const frmError = await validateForm(name, email, message);
 
-    const ERROR_BORDER = '1px solid red';
+    const ERROR_BORDER = '1px solid rgb(211, 0, 57)';
 
     if (frmError) {
       switch (frmError.type) {
         case 'name':
           setNameErrorBorder(ERROR_BORDER);
-          break;
+          return setNameError(frmError.error);
         case 'email':
           setEmailErrorBorder(ERROR_BORDER);
-          break;
+          return setEmailError(frmError.error);
         case 'message':
           setMessageErrorBorder(ERROR_BORDER);
-          break;
+          return setMessageError(frmError.error);
         default:
           setNameErrorBorder('');
       }
-
-      return setError(frmError.error);
     }
 
     const info = {
@@ -71,7 +71,9 @@ export default () => {
   };
 
   const clearError = () => {
-    setError('');
+    setNameError('');
+    setEmailError('');
+    setMessageError('');
     setNameErrorBorder('');
     setEmailErrorBorder('');
     setMessageErrorBorder('');
@@ -81,13 +83,9 @@ export default () => {
     <div className='row'>
       <div className='col-1 col-md-1 sidebar' />
       <div className='col-11 col-md-6'>
-        {error ? <p className='error'>{error}</p> : null}
-
-        {showResponse()}
-
         <form onSubmit={sendMail} method='post' id='email-form'>
           <div className='form-group'>
-            <label htmlFor='name'>Name</label>
+            <label htmlFor='name'>Name</label><span className='error'>{nameError}</span>
             <input
               type='text'
               className='form-control'
@@ -102,7 +100,7 @@ export default () => {
           </div>
 
           <div className='form-group'>
-            <label htmlFor='email'>Email</label>
+            <label htmlFor='email'>Email</label><span className='error'>{emailError}</span>
             <input
               type='email'
               className='form-control'
@@ -114,11 +112,11 @@ export default () => {
               }}
               style={{ border: emailErrorBorder }}
             />
-            <small>We will not share your info with anyone. Full stop.</small>
+            <small>Your information will never be shared. Full stop.</small>
           </div>
 
           <div className='form-group'>
-            <label htmlFor='description'>Message</label>
+            <label htmlFor='description'>Message</label><span className='error'>{messageError}</span>
             <textarea
               rows={3}
               className='form-control'
@@ -132,7 +130,12 @@ export default () => {
             />
           </div>
 
-          <button type='submit'>Send</button>
+          <div className='send-div'>
+            <button type='submit'>Send</button>
+
+            {showResponse()}
+          </div>
+
           <div className='g-recaptcha' data-sitekey={`${process.env.CAPTCHA_KEY}`} data-theme='light' />
         </form>
       </div>

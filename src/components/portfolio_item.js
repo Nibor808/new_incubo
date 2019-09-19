@@ -1,12 +1,19 @@
 import React from 'react';
 
 export default (props) => {
+  const { handleClick } = props;
+  const { title, badgeIcon, github, text, image } = props.item;
+
   return (
     <div className='portfolio-item'>
-      <h3><strong>{props.item.title}</strong></h3>
-      {props.item.badgeIcon ? props.item.badgeIcon : null}
-      {props.item.text ? props.item.text() : null}
-      {props.item.image ? props.item.image(props.handleClick) : null}
+      <div className='portfolio-item-head'>
+        <h3><strong>{title}</strong></h3>
+        {github ? github : null}
+      </div>
+
+      {badgeIcon ? badgeIcon : null}
+      {text ? text() : null}
+      {image ? image(handleClick) : null}
     </div>
   );
 };
