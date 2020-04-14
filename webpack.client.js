@@ -43,7 +43,10 @@ const plugins = [
     path: path.resolve(__dirname, 'src')
   }),
   new OCSSAPlugin({}),
-  new HTMLPlugin({ template: baseDir + '/index.html' })
+  new HTMLPlugin({
+    template: baseDir + '/index.html',
+    scriptLoading: 'defer'
+  })
 ];
 
 const rules = [

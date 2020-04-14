@@ -59,7 +59,19 @@
     "react/jsx-uses-react": [
       "error"
     ],
-    "no-class-assign": "off"
+    "no-class-assign": "off",
+    "guard-for-in": [
+      "error"
+    ],
+    "no-empty-function": [
+      "error"
+    ],
+    "no-unused-expressions": [
+      "error"
+    ],
+    "no-duplicate-imports": [
+      "error"
+    ]
   },
   "globals": {
     "logger": true,

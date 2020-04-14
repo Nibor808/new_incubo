@@ -62,11 +62,9 @@ export default (props) => {
               <a
                 href='https://twitter.com/incuboweb'
                 target='_blank'
+                rel='noopener'
               >
-                <img
-                  src='/images/twitter_circle.png'
-                  alt='incubo twitter'
-                />
+                <img src='/images/twitter_circle.png' alt='incubo twitter' />
               </a>
             </div>
 
@@ -74,11 +72,9 @@ export default (props) => {
               <a
                 href='https://www.linkedin.com/in/robinerickson08/'
                 target='_blank'
+                rel='noopener'
               >
-                <img
-                  src='/images/linkedin.png'
-                  alt='Robin Erickson linkedIn'
-                />
+                <img src='/images/linkedin.png' alt='Robin Erickson linkedIn' />
               </a>
             </div>
           </div>

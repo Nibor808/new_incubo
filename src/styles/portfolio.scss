@@ -42,18 +42,6 @@
       #badge {
         margin-bottom: 10px;
       }
-
-      a {
-        @extend a;
-        color: $blue !important;
-        &:hover,
-        &:active {
-          color: $white !important;
-        }
-        &:focus {
-          color: $blue !important;
-        }
-      }
     }
 
     .items2016 {

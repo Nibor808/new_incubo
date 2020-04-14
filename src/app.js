@@ -1,7 +1,7 @@
 import React, { useState, useEffect }   from 'react';
 import Header from './components/header';
 import Modal from 'react-modal';
-import About from './components/about.js';
+import About from './components/about';
 import Contact from './components/email_form';
 import PortfolioItem from './components/portfolio_item';
 import { list2016, list2017 } from './utils/portfolio_list';
@@ -19,7 +19,7 @@ export default () => {
     useEffect(() => {
       if (height <= 781) setBottomPadding('0');
       else if (height > 781 && height <= 839) setBottomPadding(`${height * 0.07}px`);
-      else setBottomPadding(`${height * 0.18}px`);
+      else setBottomPadding(`${height * 0.2}px`);
     });
   }
 
@@ -101,7 +101,7 @@ export default () => {
             <div className='row'>
               <div className='col-12'>
                 <h1>Portfolio</h1>
-                <a href='https://github.com/Nibor808' target='_blank'>github</a>
+                <a href='https://github.com/Nibor808' target='_blank' rel='noopener'>github</a>
               </div>
             </div>
           </div>
@@ -144,8 +144,7 @@ export default () => {
             <div className='row'>
               <div className='col-12'>
                 <h1>Contact</h1>
-                <p>Want to work together?</p>
-                <p>Get in touch!</p>
+                <p>Want to work together? Get in touch!</p>
               </div>
             </div>
           </div>

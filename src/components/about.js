@@ -86,7 +86,7 @@ const STATS = {
       </div>
 
       <div className='col-sm-10 bottom-box'>
-        <p>Focusing primarily on Node + React with hobby projects in Elixir and Go</p>
+        <p>Focusing primarily on Node + React with hobby projects in Go, Java, and Elixir</p>
       </div>
     </div>
   );

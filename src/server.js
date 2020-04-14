@@ -20,6 +20,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(port, () => {
-  // eslint-disable-next-line no-console
   logger.info(`Listening on ${port}`);
 });
