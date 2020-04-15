@@ -39,7 +39,6 @@ export default () => {
       `<pre>
 const STATS = {
   "location": {
-    "city": "Peterborough",
     "province": "Ontario",
     "country": "Canada"
   },
@@ -54,7 +53,8 @@ const STATS = {
   "skills": [
     "problem_solving",
     "clean_ui",
-    "collaborative"
+    "clean_code",
+    "collaboration"
   ]
 }
       </pre>`
@@ -68,7 +68,7 @@ const STATS = {
   const callDisplay = () => {
     setInterval(() => {
       renderInfoDisplay();
-    },1000);
+    },0);
   };
 
   return (
@@ -86,7 +86,7 @@ const STATS = {
       </div>
 
       <div className='col-sm-10 bottom-box'>
-        <p>Focusing primarily on Node + React with hobby projects in Go, Java, and Elixir</p>
+        <p>Working in the MERN stack with hobby projects in Swift, Go, Java, and Elixir</p>
       </div>
     </div>
   );

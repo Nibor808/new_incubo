@@ -1,4 +1,4 @@
-import React, { useState, useEffect }   from 'react';
+import React, { useState }   from 'react';
 import Header from './components/header';
 import Modal from 'react-modal';
 import About from './components/about';
@@ -10,18 +10,8 @@ import modalStyle from './utils/modal_style';
 export default () => {
   const [ isOpen, setIsOpen ] = useState(false);
   const [ event, setEvent ] = useState();
-  const [ bottomPadding, setBottomPadding ] = useState('');
   const portfolioRef = React.createRef();
   const contactRef = React.createRef();
-  const height = window.innerHeight;
-
-  if (height) {
-    useEffect(() => {
-      if (height <= 781) setBottomPadding('0');
-      else if (height > 781 && height <= 839) setBottomPadding(`${height * 0.07}px`);
-      else setBottomPadding(`${height * 0.2}px`);
-    });
-  }
 
   window.onscroll = () => {
     if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
@@ -88,16 +78,16 @@ export default () => {
         toPortfolio={toPortfolio}
       />
 
-      <section className='landing'>
+      <section className='landing container'>
 
         <article className='about'>
-          <div className='container about-container'>
+          <div className='about-container'>
             <About toContact={toContact} />
           </div>
         </article>
 
         <article className='portfolio' ref={portfolioRef}>
-          <div className='container header-container'>
+          <div className='header-container'>
             <div className='row'>
               <div className='col-12'>
                 <h1>Portfolio</h1>
@@ -106,7 +96,7 @@ export default () => {
             </div>
           </div>
 
-          <div className='container portfolio-container'>
+          <div className='portfolio-container'>
             <div className='row'>
               <div className='col-sm-2 col-md-1 sidebar2017'>
                 <p>2017</p>
@@ -139,8 +129,8 @@ export default () => {
           </div>
         </article>
 
-        <article className='contact' style={{ paddingBottom: bottomPadding }} ref={contactRef}>
-          <div className='container header-container'>
+        <article className='contact' ref={contactRef}>
+          <div className='header-container'>
             <div className='row'>
               <div className='col-12'>
                 <h1>Contact</h1>
@@ -149,7 +139,7 @@ export default () => {
             </div>
           </div>
 
-          <div className='container contact-container'>
+          <div className='contact-container'>
             <Contact />
           </div>
         </article>

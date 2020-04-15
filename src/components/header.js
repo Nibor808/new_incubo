@@ -16,11 +16,20 @@ export default (props) => {
   };
 
   return (
-    <header key='app1' ref={topRef}>
-      <nav className='navbar navbar-expand-lg fixed-top'>
+    <header ref={topRef}>
+      <nav className='navbar navbar-expand-lg fixed-top navbar-light'>
         <div className='container'>
+          <a href='' className='navbar-brand'>
+            <img
+              id='logo-img'
+              src='/images/incubo_logo.png'
+              alt='incubo web solutions logo'
+              className='img-fluid'
+              onClick={toTop}
+            />
+          </a>
+
           <button className='navbar-toggler'
-            style={{ border: '1px solid black' }}
             type='button'
             data-toggle='collapse'
             data-target='#content'
@@ -31,17 +40,7 @@ export default (props) => {
           </button>
 
           <div className='collapse navbar-collapse' id='content'>
-            <a href='' className='navbar-brand'>
-              <img
-                id='logo-img'
-                src='/images/incubo_logo.png'
-                alt='incubo web solutions logo'
-                className='img-fluid'
-                onClick={toTop}
-              />
-            </a>
-
-            <ul className='mr-auto navbar-nav'>
+            <ul className='navbar-nav mr-auto'>
               <li className='nav-item'>
                 <a
                   className='nav-link'
@@ -60,6 +59,7 @@ export default (props) => {
 
             <div className='nav-item'>
               <a
+                className='nav-link'
                 href='https://twitter.com/incuboweb'
                 target='_blank'
                 rel='noopener'
@@ -70,6 +70,7 @@ export default (props) => {
 
             <div className='nav-item'>
               <a
+                className='nav-link'
                 href='https://www.linkedin.com/in/robinerickson08/'
                 target='_blank'
                 rel='noopener'
