@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean-dev": "rimraf ./build-dev",
-    "dev": "npm run clean-dev && ./bin/dev.sh"
+    "clean-prod": "rimraf ./dist",
+    "dev": "npm run clean-dev && ./bin/dev.sh",
+    "production": "npm run clean-prod && ./bin/production.sh"
   },
   "author": "Robin Erickson",
   "license": "ISC",

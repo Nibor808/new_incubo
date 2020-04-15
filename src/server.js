@@ -4,6 +4,7 @@ import parser from 'body-parser';
 import path from 'path';
 import sendMail from './utils/send_mail';
 import logger from './utils/logger';
+import helmet from 'helmet';
 
 global.logger = logger;
 
@@ -12,6 +13,7 @@ const app = express();
 app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
 app.use(express.static(__dirname));
+app.use(helmet());
 
 app.post('/sendmail', sendMail);
 

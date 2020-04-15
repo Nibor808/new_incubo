@@ -3,7 +3,6 @@
 export DEPLOY_MODE=development
 
 mkdir ./build-dev
-mkdir build-dev/logs
 
 echo "/*** Starting DEV build... ***/"
 echo "/*** DEPLOY_MODE ---> development ***/"
