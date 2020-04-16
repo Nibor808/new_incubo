@@ -6,7 +6,7 @@ const MCSSEPlugin = require('mini-css-extract-plugin');
 const OCSSAPlugin = require('optimize-css-assets-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
 
-const DEV = process.env.DEPLOY_MODE === 'development';
+const DEV = process.env.NODE_ENV === 'development';
 
 const baseDir = path.resolve(__dirname, './src');
 
@@ -28,7 +28,7 @@ const plugins = [
     path: path.resolve(__dirname, './.env'),
     safe: false
   }),
-  new webpack.EnvironmentPlugin(['DEPLOY_MODE']),
+  new webpack.EnvironmentPlugin(['NODE_ENV']),
   new webpack.ProvidePlugin({
     jQuery: 'jquery',
     $: 'jquery',

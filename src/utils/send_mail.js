@@ -2,7 +2,7 @@
 import nodemailer from 'nodemailer';
 
 export default async (req, res) => {
-  const { name, email, message } = req.body;
+  const { name, email, message, captchaToken } = req.body;
 
   const smtpConfig = {
     service: 'gmail',
@@ -12,21 +12,18 @@ export default async (req, res) => {
     }
   };
 
-  // if(req.body['g-recaptcha-response'] === undefined ||
-  //   req.body['g-recaptcha-response'] === '' ||
-  //   req.body['g-recaptcha-response'] === null) {
-  //   return res.send({ error: 'Please check the captcha' });
-  // }
+  if(!captchaToken) {
+    return res.send({ error: 'Please check the captcha' });
+  }
 
   const transporter = nodemailer.createTransport(smtpConfig);
 
   try {
     await transporter.sendMail({
-      from: email,
-      to: 'Incubo Development Inquiry development@incubo.ca',
-      subject: 'Test Incubo',
+      to: 'development@incubo.ca',
+      subject: 'Incubo Development Inquiry',
       html: `
-      <p>From: ${name}</p>
+      <p>From: ${name} - ${email}</p>
       <p>${message}</p>
     `
     });

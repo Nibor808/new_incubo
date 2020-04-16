@@ -1,11 +1,11 @@
 #!/bin/bash
 
-export DEPLOY_MODE=development
+export NODE_ENV=development
 
 mkdir ./build-dev
 
 echo "/*** Starting DEV build... ***/"
-echo "/*** DEPLOY_MODE ---> development ***/"
+echo "/*** NODE_ENV ---> development ***/"
 
 CP_IMAGES="cp -a ./src/styles/images build-dev/"
 

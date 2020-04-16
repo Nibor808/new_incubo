@@ -36,7 +36,7 @@ const logger = createLogger({
   ]
 });
 
-if (process.env.DEPLOY_MODE === 'development') {
+if (process.env.NODE_ENV === 'development') {
   logger.add(
     new transports.Console({
       level: 'info',

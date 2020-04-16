@@ -1,11 +1,11 @@
 #!/bin/bash
 
-export DEPLOY_MODE=production
+export NODE_ENV=production
 
 mkdir ./dist
 
 echo "/*** Starting Production Build... ***/"
-echo "/*** DEPLOY_MODE ---> production ***/"
+echo "/*** NODE_ENV ---> production ***/"
 
 CP_IMAGES="cp -a ./src/styles/images dist/"
 CP_PACKAGE="cp ./package.json dist/"

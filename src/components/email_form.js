@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { ReCaptcha } from 'react-recaptcha-google';
 import validateForm from '../utils/validate_form';
 
 export default () => {
   const [ name, setName ] = useState('');
   const [ email, setEmail ] = useState('');
   const [ message, setMessage ] = useState('');
+  const [ captcha, setCaptcha ] = useState('');
+  const [ captchaToken, setCaptchaToken ] = useState('');
   const [ response, setResponse ] = useState('');
   const [ nameError, setNameError ] = useState('');
   const [ emailError, setEmailError ] = useState('');
@@ -41,7 +44,8 @@ export default () => {
     const info = {
       name,
       email,
-      message
+      message,
+      captchaToken
     };
 
     fetch('/sendmail', {
@@ -54,7 +58,17 @@ export default () => {
       .then(res => res.json())
       .then(response => {
         setResponse(response);
-        frm.reset();
+
+        if (!response.error) {
+          frm.reset();
+          captcha.reset();
+
+          setName('');
+          setEmail('');
+          setMessage('');
+          setCaptcha('');
+          setCaptchaToken('');
+        }
 
         setTimeout(() => {
           setResponse('');
@@ -70,6 +84,14 @@ export default () => {
     }
   };
 
+  const onLoadRecaptcha = () => {
+    if (captcha) captcha.reset();
+  };
+
+  const verifyCallback = (recaptchaToken) => {
+    setCaptchaToken(recaptchaToken);
+  };
+
   const clearError = () => {
     setNameError('');
     setEmailError('');
@@ -83,6 +105,7 @@ export default () => {
     <div className='row'>
       <div className='col-1 col-md-1 sidebar' />
       <div className='col-11 col-md-6'>
+
         <form onSubmit={sendMail} method='post' id='email-form'>
           <div className='form-group'>
             <label htmlFor='name'>Name</label><span className='error'>{nameError}</span>
@@ -90,7 +113,7 @@ export default () => {
               type='text'
               className='form-control'
               id='name'
-              name='quote[name]'
+              name='name'
               onChange={ev => {
                 setName(ev.target.value);
                 clearError();
@@ -105,7 +128,7 @@ export default () => {
               type='email'
               className='form-control'
               id='email'
-              name='quote[email]'
+              name='email'
               onChange={ev => {
                 setEmail(ev.target.value);
                 clearError();
@@ -121,7 +144,7 @@ export default () => {
               rows={3}
               className='form-control'
               id='message'
-              name='quote[message]'
+              name='message'
               onChange={ev => {
                 setMessage(ev.target.value);
                 clearError();
@@ -136,8 +159,17 @@ export default () => {
             {showResponse()}
           </div>
 
-          <div className='g-recaptcha' data-sitekey={`${process.env.CAPTCHA_KEY}`} data-theme='light' />
+          <ReCaptcha
+            ref={e => setCaptcha(e)}
+            size='normal'
+            data-theme='light'
+            render='explicit'
+            sitekey={`${process.env.RECAPTCHA_KEY}`}
+            onloadCallback={onLoadRecaptcha}
+            verifyCallback={verifyCallback}
+          />
         </form>
+
       </div>
     </div>
   );

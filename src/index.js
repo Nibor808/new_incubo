@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import App from './app';
 
 // eslint-disable-next-line no-console
-if (process.env.DEPLOY_MODE !== 'production') console.log('deploy mode', process.env.DEPLOY_MODE);
+if (process.env.NODE_ENV !== 'production') console.log('MODE:', process.env.NODE_ENV);
 
 ReactDOM.render(
   <App/>,

@@ -2,40 +2,26 @@ import React, { useState } from 'react';
 import moment from 'moment';
 
 export default () => {
-  const [infoDisplay, setInfoDisplay ] = useState('');
-  const START_DATE = moment([2016, 0, 1]);
+  const [years, setYears ] = useState('');
+  const [months, setMonths ] = useState('');
+  const [days, setDays ] = useState('');
+  const [hours, setHours ] = useState('');
+  const [minutes, setMinutes ] = useState('');
+  const [seconds, setSeconds ] = useState('');
 
   const getTime = () => {
-    const timeSinceStartDate = moment().diff(START_DATE);
+    const timeSinceStartDate = moment().diff([2016, 0, 1]);
 
-    const years = moment.duration(timeSinceStartDate).years();
-    const months = moment.duration(timeSinceStartDate).months();
-    const days = moment.duration(timeSinceStartDate).days();
-    const hours = moment.duration(timeSinceStartDate).hours();
-    const minutes = moment.duration(timeSinceStartDate).minutes();
-    const seconds = moment.duration(timeSinceStartDate).seconds();
-
-    return {
-      years,
-      months,
-      days,
-      hours,
-      minutes,
-      seconds
-    };
+    setYears(moment.duration(timeSinceStartDate).years());
+    setMonths(moment.duration(timeSinceStartDate).months());
+    setDays(moment.duration(timeSinceStartDate).days());
+    setHours(moment.duration(timeSinceStartDate).hours());
+    setMinutes(moment.duration(timeSinceStartDate).minutes());
+    setSeconds(moment.duration(timeSinceStartDate).seconds());
   };
   
   const renderInfoDisplay = () => {
-    const {
-      years,
-      months,
-      days,
-      hours,
-      minutes,
-      seconds
-    } = getTime();
-    
-    setInfoDisplay(
+    return (
       `<pre>
 const STATS = {
   "location": {
@@ -62,24 +48,20 @@ const STATS = {
   };
 
   const createInfoMarkup = () => {
-    return { __html: infoDisplay };
+    return { __html: renderInfoDisplay() };
   };
 
-  const callDisplay = () => {
-    setInterval(() => {
-      renderInfoDisplay();
-    },0);
-  };
+  setInterval(() => {
+    getTime();
+  },1000);
 
   return (
     <div className='row'>
-      {callDisplay()}
-
       <div className='col-sm-10 col-xl-8 top-box'>
         <div className='img-box'>
           <img src='/images/robin.jpg' alt='me' height='300px' width='300px' className='img-fluid'/>
           <h2>Robin Erickson</h2>
-          <p>web developer</p>
+          <p>software developer</p>
         </div>
 
         <span dangerouslySetInnerHTML={createInfoMarkup()}/>

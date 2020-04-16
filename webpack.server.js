@@ -3,7 +3,7 @@ const Dotenv = require('dotenv-webpack');
 const webpackNodeExternals = require('webpack-node-externals');
 const WebpackShellPlugin = require('webpack-shell-plugin');
 
-const DEV = process.env.DEPLOY_MODE === 'development';
+const DEV = process.env.NODE_ENV === 'development';
 
 const baseDir = path.resolve(__dirname, './src');
 

@@ -3,9 +3,10 @@ import Header from './components/header';
 import Modal from 'react-modal';
 import About from './components/about';
 import Contact from './components/email_form';
-import PortfolioItem from './components/portfolio_item';
+import PortfolioList from './components/portfolio_list';
 import { list2016, list2017 } from './utils/portfolio_list';
 import modalStyle from './utils/modal_style';
+import { loadReCaptcha } from 'react-recaptcha-google';
 
 export default () => {
   const [ isOpen, setIsOpen ] = useState(false);
@@ -69,82 +70,67 @@ export default () => {
     }
   };
 
-  return (
-    <div>
-      {showModal()}
+  return [
+    <span key='l1'>{showModal()}</span>,
+    <span key='l2'>{loadReCaptcha()}</span>,
 
-      <Header
-        toContact={toContact}
-        toPortfolio={toPortfolio}
-      />
+    <Header
+      key='l3'
+      toContact={toContact}
+      toPortfolio={toPortfolio}
+    />,
 
-      <section className='landing container'>
+    <section key='l4' className='landing container'>
 
-        <article className='about'>
-          <div className='about-container'>
-            <About toContact={toContact} />
-          </div>
-        </article>
+      <article className='about'>
+        <div className='about-container'>
+          <About toContact={toContact} />
+        </div>
+      </article>
 
-        <article className='portfolio' ref={portfolioRef}>
-          <div className='header-container'>
-            <div className='row'>
-              <div className='col-12'>
-                <h1>Portfolio</h1>
-                <a href='https://github.com/Nibor808' target='_blank' rel='noopener'>github</a>
-              </div>
+      <article className='portfolio' ref={portfolioRef}>
+        <div className='header-container'>
+          <div className='row'>
+            <div className='col-12'>
+              <h1>Portfolio</h1>
+              <a href='https://github.com/Nibor808' target='_blank' rel='noopener'>github</a>
             </div>
           </div>
+        </div>
 
-          <div className='portfolio-container'>
-            <div className='row'>
-              <div className='col-sm-2 col-md-1 sidebar2017'>
-                <p>2017</p>
-              </div>
+        <div className='portfolio-container'>
+          <PortfolioList
+            year='2017'
+            list={list2017}
+            listClass='sidebar2017'
+            handleClick={handleClick}
+          />
 
-              <div className='col-sm-10 col-md-11 portfolio-items'>
-                {list2017.map((item, index) => <PortfolioItem
-                  key={`portfolio-item-${index}`}
-                  item={item}
-                  index={index}
-                  handleClick={handleClick}
-                />)}
-              </div>
-            </div>
 
-            <div className='row'>
-              <div className='col-sm-2 col-md-1 sidebar2016'>
-                <p>2016</p>
-              </div>
+          <PortfolioList
+            year='2016'
+            list={list2016}
+            listClass='sidebar2016'
+            handleClick={handleClick}
+          />
+        </div>
+      </article>
 
-              <div className='col-sm-10 col-md-11 portfolio-items items2016'>
-                {list2016.map((item, index) => <PortfolioItem
-                  key={`portfolio-item-${index}`}
-                  item={item}
-                  index={index}
-                  handleClick={handleClick}
-                />)}
-              </div>
+      <article className='contact' ref={contactRef}>
+        <div className='header-container'>
+          <div className='row'>
+            <div className='col-12'>
+              <h1>Contact</h1>
+              <p>Want to work together? Get in touch!</p>
             </div>
           </div>
-        </article>
+        </div>
 
-        <article className='contact' ref={contactRef}>
-          <div className='header-container'>
-            <div className='row'>
-              <div className='col-12'>
-                <h1>Contact</h1>
-                <p>Want to work together? Get in touch!</p>
-              </div>
-            </div>
-          </div>
+        <div className='contact-container'>
+          <Contact />
+        </div>
+      </article>
 
-          <div className='contact-container'>
-            <Contact />
-          </div>
-        </article>
-
-      </section>
-    </div>
-  );
+    </section>
+  ];
 };
