@@ -34,27 +34,30 @@ export const list2017 =  [
         <div className='row'>
           <div className='col'>
             <img
-              src='/images/odf-full.png'
+              src='/images/odf-full-thumb.jpg'
               className='img-fluid clickable'
               alt='Online Divorce Forms Landing Page'
+              data-text='/images/odf-full.jpg'
               onClick={(ev) => handleClick(ev)}
             />
           </div>
 
           <div className='col'>
             <img
-              src='/images/odf-forms.png'
+              src='/images/odf-forms-thumb.jpg'
               className='img-fluid clickable'
               alt={`Online Divorce Forms User's Forms List`}
+              data-text='/images/odf-forms.jpg'
               onClick={(ev) => handleClick(ev)}
             />
           </div>
 
           <div className='col'>
             <img
-              src='/images/odf-access-scheduler.png'
+              src='/images/odf-access-scheduler-thumb.jpg'
               className='img-fluid clickable'
               alt='Online Divorce Forms Access Scheduler'
+              data-text='/images/odf-access-scheduler.jpg'
               onClick={(ev) => handleClick(ev)}
             />
           </div>
@@ -80,7 +83,7 @@ export const list2017 =  [
         </p>
       ];
     },
-    image: () => <img src='/images/jesstech.png' className='img-fluid' alt='Jesstech Landing Page' />
+    image: () => <img src='/images/jesstech.jpg' className='img-fluid' alt='Jesstech Landing Page' />
   },
   {
     title: 'Lakeshore Electric',
@@ -91,7 +94,7 @@ export const list2017 =  [
       Without the need for any backend Lakeshore Electric was built using HTML5, CSS3 and jQuery.
       (no longer active)
     </p>,
-    image: () => <img src='/images/lakeshore.png' className='img-fluid' alt='Lakeshore Electric Landing Page' />
+    image: () => <img src='/images/lakeshore.jpg' className='img-fluid' alt='Lakeshore Electric Landing Page' />
   },
   {
     title: 'Incubo Web Solutions',
@@ -100,7 +103,7 @@ export const list2017 =  [
       The old Incubo site. The black and white design was complimented by colourising
       the link squares on rollover. Built on Node JS with HTML5, Handlebars, CSS3, and jQuery.
     </p>,
-    image: () => <img src='/images/incubo_old.png' className='img-fluid' alt='Old Incubo Landing Page' />
+    image: () => <img src='/images/incubo_old.jpg' className='img-fluid' alt='Old Incubo Landing Page' />
   }
 ];
 
@@ -123,7 +126,7 @@ export const list2016 = [
         </p>
       ];
     },
-    image: () => <img src='/images/casemon.png' className='img-fluid' alt='Casemon Landing Page' />
+    image: () => <img src='/images/casemon.jpg' className='img-fluid' alt='Casemon Landing Page' />
   },
   {
     title: '+3',
@@ -149,7 +152,7 @@ export const list2016 = [
         <div className='row'>
           <div className='col'>
             <img
-              src='/images/6-1.png'
+              src='/images/plus3-calc.jpg'
               className='img-fluid clickable'
               alt='+3 Calculator'
               onClick={(ev) => handleClick(ev)}
@@ -158,7 +161,7 @@ export const list2016 = [
 
           <div className='col'>
             <img
-              src='/images/6-2.png'
+              src='/images/plus3-curr.jpg'
               className='img-fluid clickable'
               alt='+3 Currency Converter'
               onClick={(ev) => handleClick(ev)}
@@ -167,7 +170,7 @@ export const list2016 = [
 
           <div className='col'>
             <img
-              src='/images/6-3.png'
+              src='/images/plus3-units.jpg'
               className='img-fluid clickable'
               alt='+3 Units Converter'
               onClick={(ev) => handleClick(ev)}

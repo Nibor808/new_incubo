@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 import About from './components/about';
 import Contact from './components/email_form';
 import PortfolioList from './components/portfolio_list';
-import { list2016, list2017 } from './utils/portfolio_list';
+import { list2016, list2017 } from './utils/portfolio_item_info';
 import modalStyle from './utils/modal_style';
 import { loadReCaptcha } from 'react-recaptcha-google';
 
@@ -60,7 +60,7 @@ export default () => {
           <h4>{event.target.alt}</h4>
 
           <img
-            src={event.target.src}
+            src={event.target.dataset.text}
             alt={event.target.alt}
             width='100%'
             style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)' }}

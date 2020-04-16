@@ -22,7 +22,7 @@ export default (props) => {
           <a href='' className='navbar-brand'>
             <img
               id='logo-img'
-              src='/images/incubo_logo.png'
+              src='/images/incubo_logo.jpg'
               alt='incubo web solutions logo'
               className='img-fluid'
               onClick={toTop}
@@ -64,7 +64,7 @@ export default (props) => {
                 target='_blank'
                 rel='noopener'
               >
-                <img src='/images/twitter_circle.png' alt='incubo twitter' />
+                <img src='/images/twitter_circle.jpg' alt='incubo twitter' />
               </a>
             </div>
 
@@ -75,7 +75,7 @@ export default (props) => {
                 target='_blank'
                 rel='noopener'
               >
-                <img src='/images/linkedin.png' alt='Robin Erickson linkedIn' />
+                <img src='/images/linkedin.jpg' alt='Robin Erickson linkedIn' />
               </a>
             </div>
           </div>
