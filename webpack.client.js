@@ -74,7 +74,7 @@ const rules = [
     ]
   },
   {
-    test: /\.(png|jpe?g|gif|woff|ttf|eot)/,
+    test: /\.(jpg|woff|ttf|eot)/,
     loader: 'url-loader',
     options: {
       limit: 10240
@@ -93,7 +93,7 @@ const rules = [
 if (!DEV) {
   rules.push(
     {
-      test: /\.(jpe?g|png|gif|svg)$/,
+      test: /\.(jpg|png|gif|svg)$/,
       loader: 'image-webpack-loader',
       enforce: 'pre'
     }

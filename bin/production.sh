@@ -9,10 +9,11 @@ echo "/*** NODE_ENV ---> production ***/"
 
 CP_IMAGES="cp -a ./src/styles/images dist/"
 CP_PACKAGE="cp ./package.json dist/"
+CP_ROBOTS="cp ./robots.txt dist/"
 
 WEBPACK_SERVER_CMD="webpack --config webpack.server.js --watch --info-verbosity verbose --display-error-details"
 WEBPACK_CLIENT_CMD="webpack --config webpack.client.js --watch --info-verbosity verbose --display-error-details"
 
-parallelshell "$WEBPACK_CLIENT_CMD" "$WEBPACK_SERVER_CMD" "$CP_IMAGES" "$CP_PACKAGE"
+parallelshell "$WEBPACK_CLIENT_CMD" "$WEBPACK_SERVER_CMD" "$CP_IMAGES" "$CP_PACKAGE" "$CP_ROBOTS"
 
 exit 0
