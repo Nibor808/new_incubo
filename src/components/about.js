@@ -42,7 +42,7 @@ const STATS = {
     "clean_code",
     "collaboration"
   ]
-}
+};
       </pre>`
     );
   };
