@@ -7,7 +7,7 @@ export default async (req, res) => {
   const smtpConfig = {
     service: 'gmail',
     auth: {
-      user: 're@incubo.ca',
+      user: process.env.ADMIN_EMAIL,
       pass: process.env.MAILPASS
     }
   };
@@ -20,7 +20,7 @@ export default async (req, res) => {
 
   try {
     await transporter.sendMail({
-      to: 'development@incubo.ca',
+      to: process.env.DEV_EMAIL,
       subject: 'Incubo Development Inquiry',
       html: `
       <p>From: ${name} - ${email}</p>
@@ -28,7 +28,7 @@ export default async (req, res) => {
     `
     });
 
-    res.send({ ok: 'Thanks got it!' });
+    res.send({ ok: 'Thanks got it! I\'ll be in touch.' });
   } catch (err) {
     logger.error(err.message);
     res.send({ error: 'There was a problem sending your email. Please try again later.' });
