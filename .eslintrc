@@ -34,14 +34,14 @@
     ],
     "quotes": [
       "error",
-      "single",
+      "double",
       {
         "allowTemplateLiterals": true
       }
     ],
     "jsx-quotes": [
       "error",
-      "prefer-single"
+      "prefer-double"
     ],
     "semi": [
       "error",

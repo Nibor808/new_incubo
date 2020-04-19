@@ -1,13 +1,15 @@
-import React from 'react';
+import React from "react";
 
 export default (props) => {
   const { handleClick } = props;
   const { title, badgeIcon, github, text, image } = props.item;
 
   return (
-    <div className='portfolio-item'>
-      <div className='portfolio-item-head'>
-        <h3><strong>{title}</strong></h3>
+    <div className="portfolio-item">
+      <div className="portfolio-item-head">
+        <h3>
+          <strong>{title}</strong>
+        </h3>
         {github ? github : null}
       </div>
 

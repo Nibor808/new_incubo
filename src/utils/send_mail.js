@@ -1,19 +1,19 @@
-'use strict';
-import nodemailer from 'nodemailer';
+"use strict";
+import nodemailer from "nodemailer";
 
 export default async (req, res) => {
   const { name, email, message, captchaToken } = req.body;
 
   const smtpConfig = {
-    service: 'gmail',
+    service: "gmail",
     auth: {
       user: process.env.ADMIN_EMAIL,
-      pass: process.env.MAILPASS
-    }
+      pass: process.env.MAILPASS,
+    },
   };
 
-  if(!captchaToken) {
-    return res.send({ error: 'Please check the captcha' });
+  if (!captchaToken) {
+    return res.send({ error: "Please check the captcha" });
   }
 
   const transporter = nodemailer.createTransport(smtpConfig);
@@ -21,16 +21,18 @@ export default async (req, res) => {
   try {
     await transporter.sendMail({
       to: process.env.DEV_EMAIL,
-      subject: 'Incubo Development Inquiry',
+      subject: "Incubo Development Inquiry",
       html: `
       <p>From: ${name} - ${email}</p>
       <p>${message}</p>
-    `
+    `,
     });
 
-    res.send({ ok: 'Thanks got it! I\'ll be in touch.' });
+    res.send({ ok: "Thanks got it! I'll be in touch." });
   } catch (err) {
     logger.error(err.message);
-    res.send({ error: 'There was a problem sending your email. Please try again later.' });
+    res.send({
+      error: "There was a problem sending your email. Please try again later.",
+    });
   }
 };
