@@ -13,7 +13,7 @@ $boxShadowMed: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 $glow: 0 0 8px $green;
 $borderRadius: 0;
 
-@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import './custom_bootstrap';
 @import './fonts';
 @import './header';
 @import './about';

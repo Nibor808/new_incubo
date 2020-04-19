@@ -1,154 +1,146 @@
-const Dotenv = require('dotenv-webpack');
-const path = require('path');
-const webpack = require('webpack');
-const AssetsPlugin = require('assets-webpack-plugin');
-const MCSSEPlugin = require('mini-css-extract-plugin');
-const OCSSAPlugin = require('optimize-css-assets-webpack-plugin');
-const HTMLPlugin = require('html-webpack-plugin');
+const Dotenv = require("dotenv-webpack");
+const path = require("path");
+const webpack = require("webpack");
+const AssetsPlugin = require("assets-webpack-plugin");
+const MCSSEPlugin = require("mini-css-extract-plugin");
+const OCSSAPlugin = require("optimize-css-assets-webpack-plugin");
+const HTMLPlugin = require("html-webpack-plugin");
 
-const DEV = process.env.NODE_ENV === 'development';
+const DEV = process.env.NODE_ENV === "development";
 
-const baseDir = path.resolve(__dirname, './src');
+const baseDir = path.resolve(__dirname, "./src");
 
 let outputDir;
 let mode;
 
 if (DEV) {
-  outputDir = path.resolve(__dirname, './build-dev');
-  mode = 'development';
+  outputDir = path.resolve(__dirname, "./build-dev");
+  mode = "development";
 } else {
-  outputDir = path.resolve(__dirname, './dist');
-  mode = 'production';
+  outputDir = path.resolve(__dirname, "./dist");
+  mode = "production";
 }
 
 const entry = `${baseDir}/index.js`;
 
 const plugins = [
   new Dotenv({
-    path: path.resolve(__dirname, './.env'),
-    safe: false
+    path: path.resolve(__dirname, "./.env"),
+    safe: false,
   }),
-  new webpack.EnvironmentPlugin(['NODE_ENV']),
+  new webpack.EnvironmentPlugin(["NODE_ENV"]),
   new webpack.ProvidePlugin({
-    jQuery: 'jquery',
-    $: 'jquery',
-    jquery: 'jquery'
+    jQuery: "jquery",
+    $: "jquery",
+    jquery: "jquery",
   }),
   new MCSSEPlugin({
-    chunkFilename: DEV ? '[name].css' : '[name].[contentHash].css'
+    chunkFilename: DEV ? "[name].css" : "[name].[contentHash].css",
   }),
   new AssetsPlugin({
     prettyPrint: true,
     fullPath: false,
-    path: path.resolve(__dirname, 'src')
+    path: path.resolve(__dirname, "src"),
   }),
   new OCSSAPlugin({}),
   new HTMLPlugin({
-    template: baseDir + '/index.html',
-    scriptLoading: 'defer'
-  })
+    template: baseDir + "/index.html",
+    scriptLoading: "defer",
+  }),
 ];
 
 const rules = [
   {
     test: /\.js?$/,
-    loader: 'babel-loader',
-    exclude: /node_modules/
+    loader: "babel-loader",
+    exclude: /node_modules/,
   },
   {
     test: /\.css$/,
-    use: [
-      'style-loader',
-      MCSSEPlugin.loader,
-      'css-loader'
-    ]
+    use: ["style-loader", MCSSEPlugin.loader, "css-loader"],
   },
   {
     test: /\.scss$/,
     use: [
-      'style-loader',
+      "style-loader",
       MCSSEPlugin.loader,
-      'css-loader',
-      'postcss-loader',
-      'sass-loader'
-    ]
+      "css-loader",
+      "postcss-loader",
+      "sass-loader",
+    ],
   },
   {
     test: /\.(jpg|woff|ttf|eot)/,
-    loader: 'url-loader',
+    loader: "url-loader",
     options: {
-      limit: 10240
-    }
+      limit: 10240,
+    },
   },
   {
     test: /\.svg$/,
-    loader: 'svg-url-loader',
+    loader: "svg-url-loader",
     options: {
       limit: 10240,
       noquotes: true,
-    }
-  }
+    },
+  },
 ];
 
 if (!DEV) {
-  rules.push(
-    {
-      test: /\.(jpg|png|gif|svg)$/,
-      loader: 'image-webpack-loader',
-      enforce: 'pre'
-    }
-  );
+  rules.push({
+    test: /\.(jpg|png|gif|svg)$/,
+    loader: "image-webpack-loader",
+    enforce: "pre",
+  });
 }
 
 module.exports = {
   mode,
-  target: 'web',
+  target: "web",
   entry: {
-    bundle: entry
+    bundle: entry,
   },
   output: {
     path: outputDir,
-    filename: DEV ? '[name].js' : '[name].[chunkhash].js',
-    publicPath: '/'
+    filename: DEV ? "[name].js" : "[name].[chunkhash].js",
+    publicPath: "/",
   },
   resolve: {
     alias: {
-      Bootstrap: path.resolve(__dirname, 'node_modules/bootstrap/dist/js'),
-      jQuery: path.resolve(__dirname, 'node_modules/jquery/dist')
+      Bootstrap: path.resolve(__dirname, "node_modules/bootstrap/dist/js"),
+      jQuery: path.resolve(__dirname, "node_modules/jquery/dist"),
     },
-    extensions: ['*', '.js', '.json', '.jsx'],
+    extensions: ["*", ".js", ".json", ".jsx"],
     enforceExtension: false,
-    modules: [
-      'node_modules'
-    ]
+    modules: ["node_modules"],
   },
-  devtool: DEV ? 'source-map' : false,
+  devtool: DEV ? "source-map" : false,
   plugins: plugins,
   module: {
     rules: rules,
   },
   optimization: {
     splitChunks: {
-      chunks: 'all',
+      chunks: "all",
       cacheGroups: {
         styles: {
-          name: 'styles',
+          name: "styles",
           test: /\.s?css$/,
-          chunks: 'all',
+          chunks: "all",
           minChunks: 1,
           reuseExistingChunk: true,
-          enforce: true
-        }
-      }
+          enforce: true,
+        },
+      },
     },
     occurrenceOrder: !DEV,
     concatenateModules: !DEV,
     mergeDuplicateChunks: !DEV,
     removeEmptyChunks: true,
-    removeAvailableModules: true
+    removeAvailableModules: true,
   },
   watchOptions: {
     aggregateTimeout: 2000,
-    ignored: /node_modules/
-  }
+    ignored: /node_modules/,
+  },
 };
