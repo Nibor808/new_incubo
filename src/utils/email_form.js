@@ -16,7 +16,8 @@ export default (props) => {
   return (
     <div className="row">
       <div className="col-1 col-md-1 sidebar" />
-      <div className="col-11 col-md-6">
+
+      <div className="col-sm-8 col-lg-6">
         <form onSubmit={sendMail} method="post" id="email-form">
           <div className="form-group">
             <label htmlFor="name">Name</label>
