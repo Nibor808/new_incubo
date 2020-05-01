@@ -26,38 +26,38 @@ const entry = `${baseDir}/index.js`;
 const plugins = [
   new Dotenv({
     path: path.resolve(__dirname, "./.env"),
-    safe: false,
+    safe: false
   }),
   new webpack.EnvironmentPlugin(["NODE_ENV"]),
   new webpack.ProvidePlugin({
     jQuery: "jquery",
     $: "jquery",
-    jquery: "jquery",
+    jquery: "jquery"
   }),
   new MCSSEPlugin({
-    chunkFilename: DEV ? "[name].css" : "[name].[contentHash].css",
+    chunkFilename: DEV ? "[name].css" : "[name].[contentHash].css"
   }),
   new AssetsPlugin({
     prettyPrint: true,
     fullPath: false,
-    path: path.resolve(__dirname, "src"),
+    path: path.resolve(__dirname, "src")
   }),
   new OCSSAPlugin({}),
   new HTMLPlugin({
     template: baseDir + "/index.html",
-    scriptLoading: "defer",
-  }),
+    scriptLoading: "defer"
+  })
 ];
 
 const rules = [
   {
     test: /\.js?$/,
     loader: "babel-loader",
-    exclude: /node_modules/,
+    exclude: /node_modules/
   },
   {
     test: /\.css$/,
-    use: ["style-loader", MCSSEPlugin.loader, "css-loader"],
+    use: ["style-loader", MCSSEPlugin.loader, "css-loader"]
   },
   {
     test: /\.scss$/,
@@ -66,31 +66,31 @@ const rules = [
       MCSSEPlugin.loader,
       "css-loader",
       "postcss-loader",
-      "sass-loader",
-    ],
+      "sass-loader"
+    ]
   },
   {
     test: /\.(jpg|woff|ttf|eot)/,
     loader: "url-loader",
     options: {
-      limit: 10240,
-    },
+      limit: 10240
+    }
   },
   {
     test: /\.svg$/,
     loader: "svg-url-loader",
     options: {
       limit: 10240,
-      noquotes: true,
-    },
-  },
+      noquotes: true
+    }
+  }
 ];
 
 if (!DEV) {
   rules.push({
     test: /\.(jpg|png|gif|svg)$/,
     loader: "image-webpack-loader",
-    enforce: "pre",
+    enforce: "pre"
   });
 }
 
@@ -98,26 +98,26 @@ module.exports = {
   mode,
   target: "web",
   entry: {
-    bundle: entry,
+    bundle: entry
   },
   output: {
     path: outputDir,
     filename: DEV ? "[name].js" : "[name].[chunkhash].js",
-    publicPath: "/",
+    publicPath: "/"
   },
   resolve: {
     alias: {
       Bootstrap: path.resolve(__dirname, "node_modules/bootstrap/dist/js"),
-      jQuery: path.resolve(__dirname, "node_modules/jquery/dist"),
+      jQuery: path.resolve(__dirname, "node_modules/jquery/dist")
     },
     extensions: ["*", ".js", ".json", ".jsx"],
     enforceExtension: false,
-    modules: ["node_modules"],
+    modules: ["node_modules"]
   },
   devtool: DEV ? "source-map" : false,
   plugins: plugins,
   module: {
-    rules: rules,
+    rules: rules
   },
   optimization: {
     splitChunks: {
@@ -129,18 +129,18 @@ module.exports = {
           chunks: "all",
           minChunks: 1,
           reuseExistingChunk: true,
-          enforce: true,
-        },
-      },
+          enforce: true
+        }
+      }
     },
     occurrenceOrder: !DEV,
     concatenateModules: !DEV,
     mergeDuplicateChunks: !DEV,
     removeEmptyChunks: true,
-    removeAvailableModules: true,
+    removeAvailableModules: true
   },
   watchOptions: {
     aggregateTimeout: 2000,
-    ignored: /node_modules/,
-  },
+    ignored: /node_modules/
+  }
 };

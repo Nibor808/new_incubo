@@ -8,8 +8,8 @@ export default async (req, res) => {
     service: "gmail",
     auth: {
       user: process.env.ADMIN_EMAIL,
-      pass: process.env.MAILPASS,
-    },
+      pass: process.env.MAILPASS
+    }
   };
 
   if (!captchaToken) {
@@ -25,14 +25,14 @@ export default async (req, res) => {
       html: `
       <p>From: ${name} - ${email}</p>
       <p>${message}</p>
-    `,
+    `
     });
 
     res.send({ ok: "Thanks got it! I'll be in touch." });
   } catch (err) {
     logger.error(err.message);
     res.send({
-      error: "There was a problem sending your email. Please try again later.",
+      error: "There was a problem sending your email. Please try again later."
     });
   }
 };

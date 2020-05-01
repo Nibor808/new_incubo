@@ -54,10 +54,10 @@ export const list2017 = [
         <p key="main4">
           ODR is built on Node JS as a SSR React/Redux monolith with mongoDB and
           mongoose ODM.
-        </p>,
+        </p>
       ];
     },
-    image: (handleClick) => {
+    image: handleClick => {
       return (
         <div className="row">
           <div className="col">
@@ -66,7 +66,7 @@ export const list2017 = [
               className="img-fluid clickable lazyload"
               alt="Online Divorce Forms Landing Page"
               data-text={odfFull}
-              onClick={(ev) => handleClick(ev)}
+              onClick={ev => handleClick(ev)}
             />
           </div>
 
@@ -76,7 +76,7 @@ export const list2017 = [
               className="img-fluid clickable lazyload"
               alt={`Online Divorce Forms User's Forms List`}
               data-text={odfForms}
-              onClick={(ev) => handleClick(ev)}
+              onClick={ev => handleClick(ev)}
             />
           </div>
 
@@ -86,12 +86,12 @@ export const list2017 = [
               className="img-fluid clickable lazyload"
               alt="Online Divorce Forms Access Scheduler"
               data-text={odfAccessScheduler}
-              onClick={(ev) => handleClick(ev)}
+              onClick={ev => handleClick(ev)}
             />
           </div>
         </div>
       );
-    },
+    }
   },
   {
     title: "JessTech",
@@ -118,7 +118,7 @@ export const list2017 = [
         <p key="main3">
           It features JSON Web Token authentication through Passport, MySQL with
           Knex query builder, and Webpack.
-        </p>,
+        </p>
       ];
     },
     image: () => (
@@ -127,7 +127,7 @@ export const list2017 = [
         className="img-fluid lazyload"
         alt="Jesstech Landing Page"
       />
-    ),
+    )
   },
   {
     title: "Lakeshore Electric",
@@ -147,7 +147,7 @@ export const list2017 = [
         className="img-fluid lazyload"
         alt="Lakeshore Electric Landing Page"
       />
-    ),
+    )
   },
   {
     title: "Incubo Web Solutions",
@@ -173,8 +173,8 @@ export const list2017 = [
         className="img-fluid lazyload"
         alt="Old Incubo Landing Page"
       />
-    ),
-  },
+    )
+  }
 ];
 
 export const list2016 = [
@@ -212,7 +212,7 @@ export const list2016 = [
         <p key="main3">
           Unfortunately due to a lack of interest in the product, Casemon is no
           longer active.
-        </p>,
+        </p>
       ];
     },
     image: () => (
@@ -221,7 +221,7 @@ export const list2016 = [
         className="img-fluid lazyload"
         alt="Casemon Landing Page"
       />
-    ),
+    )
   },
   {
     title: "+3",
@@ -260,10 +260,10 @@ export const list2016 = [
           Just for fun I added in a units converter as well as an API driven
           currency converter. +3 was built using xcode and the swift programming
           language.
-        </p>,
+        </p>
       ];
     },
-    image: (handleClick) => {
+    image: handleClick => {
       return (
         <div className="row">
           <div className="col">
@@ -272,7 +272,7 @@ export const list2016 = [
               data-text={plus3Calc}
               className="img-fluid clickable lazyload"
               alt="+3 Calculator"
-              onClick={(ev) => handleClick(ev)}
+              onClick={ev => handleClick(ev)}
             />
           </div>
 
@@ -282,7 +282,7 @@ export const list2016 = [
               data-text={plus3Curr}
               className="img-fluid clickable lazyload"
               alt="+3 Currency Converter"
-              onClick={(ev) => handleClick(ev)}
+              onClick={ev => handleClick(ev)}
             />
           </div>
 
@@ -292,11 +292,11 @@ export const list2016 = [
               data-text={plus3Units}
               className="img-fluid clickable lazyload"
               alt="+3 Units Converter"
-              onClick={(ev) => handleClick(ev)}
+              onClick={ev => handleClick(ev)}
             />
           </div>
         </div>
       );
-    },
-  },
+    }
+  }
 ];

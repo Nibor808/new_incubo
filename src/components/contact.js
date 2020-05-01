@@ -16,7 +16,7 @@ export default () => {
   const [emailErrorBorder, setEmailErrorBorder] = useState("");
   const [messageErrorBorder, setMessageErrorBorder] = useState("");
 
-  const sendMail = async (ev) => {
+  const sendMail = async ev => {
     ev.preventDefault();
 
     const frm = document.getElementById("email-form");
@@ -45,18 +45,18 @@ export default () => {
       name,
       email,
       message,
-      captchaToken,
+      captchaToken
     };
 
     fetch("/sendmail", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify(info),
+      body: JSON.stringify(info)
     })
-      .then((res) => res.json())
-      .then((response) => {
+      .then(res => res.json())
+      .then(response => {
         setResponse(response);
 
         if (!response.error) {
@@ -74,7 +74,7 @@ export default () => {
           setResponse("");
         }, 3000);
       })
-      .catch((err) => setResponse(err));
+      .catch(err => setResponse(err));
   };
 
   const showResponse = () => {
@@ -91,11 +91,11 @@ export default () => {
     if (captcha) captcha.reset();
   };
 
-  const verifyCallback = (recaptchaToken) => {
+  const verifyCallback = recaptchaToken => {
     setCaptchaToken(recaptchaToken);
   };
 
-  const doSetCaptcha = (ev) => {
+  const doSetCaptcha = ev => {
     setCaptcha(ev);
   };
 
@@ -123,12 +123,12 @@ export default () => {
       errors={{
         nameError,
         emailError,
-        messageError,
+        messageError
       }}
       borders={{
         nameErrorBorder,
         emailErrorBorder,
-        messageErrorBorder,
+        messageErrorBorder
       }}
       showResponse={showResponse}
       onLoadRecaptcha={onLoadRecaptcha}

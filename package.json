@@ -5,6 +5,9 @@
   "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint './src/**'",
+    "format": "prettier --write ./src",
+    "clean-all": "npm run lint && npm run format",
     "webpack-client": "webpack --config webpack.client.js --watch --info-verbosity verbose --display-error-details",
     "webpack-server": "webpack --config webpack.server.js --watch --info-verbosity verbose --display-error-details",
     "dev-clean": "rimraf ./build-dev",
@@ -16,7 +19,7 @@
     "prod-copy-package": "cp package.json public/",
     "prod-copy-robots": "cp robots.txt public/",
     "prod-copy": "run-s prod-copy-images prod-copy-package prod-copy-robots",
-    "production": "npm run prod-clean && npm run prod-copy && NODE_ENV=production npm run build"
+    "production": "npm run clean-all && npm run prod-clean && npm run prod-copy && NODE_ENV=production npm run build"
   },
   "author": "Robin Erickson",
   "license": "ISC",

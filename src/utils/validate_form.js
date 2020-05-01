@@ -7,6 +7,6 @@ export default (name, email, message) => {
   if (!message)
     return {
       error: "Ok I'll guess. You want to talk about...",
-      type: "message",
+      type: "message"
     };
 };

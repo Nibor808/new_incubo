@@ -17,9 +17,7 @@
     },
     "sourceType": "module"
   },
-  "plugins": [
-    "react"
-  ],
+  "plugins": ["react"],
   "rules": {
     "indent": [
       "error",
@@ -28,10 +26,7 @@
         "SwitchCase": 1
       }
     ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
+    "linebreak-style": ["error", "unix"],
     "quotes": [
       "error",
       "double",
@@ -39,39 +34,17 @@
         "allowTemplateLiterals": true
       }
     ],
-    "jsx-quotes": [
-      "error",
-      "prefer-double"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
-    "no-undef": [
-      "warn"
-    ],
-    "no-console": [
-      "warn"
-    ],
-    "react/jsx-uses-vars": [
-      "error"
-    ],
-    "react/jsx-uses-react": [
-      "error"
-    ],
+    "jsx-quotes": ["error", "prefer-double"],
+    "semi": ["error", "always"],
+    "no-undef": ["warn"],
+    "no-console": ["warn"],
+    "react/jsx-uses-vars": ["error"],
+    "react/jsx-uses-react": ["error"],
     "no-class-assign": "off",
-    "guard-for-in": [
-      "error"
-    ],
-    "no-empty-function": [
-      "error"
-    ],
-    "no-unused-expressions": [
-      "error"
-    ],
-    "no-duplicate-imports": [
-      "error"
-    ]
+    "guard-for-in": ["error"],
+    "no-empty-function": ["error"],
+    "no-unused-expressions": ["error"],
+    "no-duplicate-imports": ["error"]
   },
   "globals": {
     "logger": true,

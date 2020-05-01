@@ -1,2 +1,6 @@
 node_modules
-build-*
+build-dev
+public
+src/styles/*
+src/index.html
+src/webpack-assets.json

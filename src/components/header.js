@@ -3,17 +3,17 @@ import logo from "../styles/images/incubo_logo.jpg";
 import twitter from "../styles/images/twitter_circle.jpg";
 import linkedIn from "../styles/images/linkedin.jpg";
 
-export default (props) => {
+export default props => {
   const { toPortfolio, toContact } = props;
 
   const topRef = React.createRef();
 
-  const toTop = (ev) => {
+  const toTop = ev => {
     ev.preventDefault();
 
     setTimeout(() => {
       topRef.current.scrollIntoView({
-        behavior: "smooth",
+        behavior: "smooth"
       });
     }, 50);
   };

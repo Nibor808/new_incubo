@@ -24,11 +24,11 @@ if (DEV) {
 const plugins = [
   new Dotenv({
     path: "./.env",
-    safe: false,
+    safe: false
   }),
   new WebpackShellPlugin({
-    onBuildEnd: [`nodemon ${instanceDir}/server.js --watch ${instanceDir}`],
-  }),
+    onBuildEnd: [`nodemon ${instanceDir}/server.js --watch ${instanceDir}`]
+  })
 ];
 
 const entry = `${baseDir}/server.js`;
@@ -39,17 +39,17 @@ module.exports = {
   node: {
     /* fixed a problem with resolving a proper __dirname */
     __dirname: false,
-    __filename: false,
+    __filename: false
   },
   entry: entry,
   output: {
     filename: "server.js",
-    path: outputDir,
+    path: outputDir
   },
   externals: [webpackNodeExternals()],
   devtool: DEV ? "source-map" : false,
   resolve: {
-    modules: ["node_modules"],
+    modules: ["node_modules"]
   },
   plugins: plugins,
   module: {
@@ -57,16 +57,16 @@ module.exports = {
       {
         test: /\.js?$/,
         loader: "babel-loader",
-        exclude: /node_modules/,
-      },
-    ],
+        exclude: /node_modules/
+      }
+    ]
   },
   watchOptions: {
     aggregateTimeout: 2000,
-    ignored: /node_modules/,
+    ignored: /node_modules/
   },
   optimization: {
     occurrenceOrder: !DEV,
-    concatenateModules: !DEV,
-  },
+    concatenateModules: !DEV
+  }
 };

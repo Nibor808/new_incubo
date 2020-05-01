@@ -24,27 +24,27 @@ export default () => {
     } else document.getElementById("logo-img").style.height = "110px";
   };
 
-  const toPortfolio = (ev) => {
+  const toPortfolio = ev => {
     ev.preventDefault();
 
     setTimeout(() => {
       portfolioRef.current.scrollIntoView({
-        behavior: "smooth",
+        behavior: "smooth"
       });
     }, 75);
   };
 
-  const toContact = (ev) => {
+  const toContact = ev => {
     ev.preventDefault();
 
     setTimeout(() => {
       contactRef.current.scrollIntoView({
-        behavior: "smooth",
+        behavior: "smooth"
       });
     }, 75);
   };
 
-  const handleClick = (ev) => {
+  const handleClick = ev => {
     setIsOpen(true);
     ev.persist();
     setEvent(ev);
@@ -68,7 +68,7 @@ export default () => {
             width="100%"
             style={{
               boxShadow:
-                "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
+                "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)"
             }}
           />
         </Modal>
@@ -136,6 +136,6 @@ export default () => {
           <Contact />
         </div>
       </article>
-    </section>,
+    </section>
   ];
 };

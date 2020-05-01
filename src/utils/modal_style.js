@@ -6,7 +6,7 @@ export default {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: "rgba(129,130,145,0.8)",
+    backgroundColor: "rgba(129,130,145,0.8)"
   },
   content: {
     maxWidth: "75%",
@@ -19,6 +19,6 @@ export default {
     transform: "translate(-50%, -50%)",
     padding: "15px",
     borderRadius: "2px",
-    backgroundColor: "rgb(255,255,255)",
-  },
+    backgroundColor: "rgb(255,255,255)"
+  }
 };

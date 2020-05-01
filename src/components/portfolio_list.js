@@ -1,7 +1,7 @@
 import React from "react";
 import PortfolioItem from "./portfolio_item";
 
-export default (props) => {
+export default props => {
   const { handleClick, year, list, listClass } = props;
   const klass = `col-sm-2 col-md-1 ${listClass}`;
 

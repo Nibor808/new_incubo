@@ -1,24 +1,24 @@
 /* -------------- GLOBALS -------------- */
-$icon-font-path: '/fonts/';
+$icon-font-path: "/fonts/";
 $white: rgb(255, 255, 255);
 $blue: rgb(102, 133, 230);
 $green: rgb(135, 237, 137);
-$yellow: rgb(238 ,219 ,81);
+$yellow: rgb(238, 219, 81);
 $red: rgb(211, 0, 57);
 $grey: rgb(225, 225, 225);
 $fontColor: rgb(51, 51, 51);
 $siteBackground: rgb(250, 241, 216);
-$boxShadowSm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-$boxShadowMed: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$boxShadowSm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$boxShadowMed: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 $glow: 0 0 8px $green;
 $borderRadius: 0;
 
-@import './custom_bootstrap';
-@import './fonts';
-@import './header';
-@import './about';
-@import './portfolio';
-@import './contact';
+@import "./custom_bootstrap";
+@import "./fonts";
+@import "./header";
+@import "./about";
+@import "./portfolio";
+@import "./contact";
 
 /* -------------- FORMATTING -------------- */
 html,
@@ -66,7 +66,7 @@ h6 {
 a {
   text-decoration: none;
   color: $blue;
-  transition: color .3s ease-in;
+  transition: color 0.3s ease-in;
   &:hover,
   &:active {
     text-decoration: none;
@@ -98,7 +98,6 @@ ul > li {
 @media only screen and (min-width: 320px) and (max-width: 568px) {
   .portfolio {
     .portfolio-container {
-
       .sidebar2017 {
         border-right: 0;
         padding-left: 15px;
@@ -143,7 +142,6 @@ ul > li {
 
     .navbar {
       .container {
-
         .nav-item:last-child {
           margin-left: 0;
         }
@@ -153,7 +151,6 @@ ul > li {
         }
 
         .navbar-collapse {
-
           .nav-item {
             margin-top: 10px;
           }

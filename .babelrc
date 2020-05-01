@@ -12,20 +12,17 @@
   "plugins": [
     "transform-class-properties",
     "transform-object-rest-spread",
-    ["transform-runtime", {
-      "regenerator": true
-    }]
+    [
+      "transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
   ],
   "env": {
     "test": {
-      "presets": [
-        "env",
-        "react"
-      ],
-      "plugins": [
-        "transform-class-properties",
-        "transform-object-rest-spread"
-      ]
+      "presets": ["env", "react"],
+      "plugins": ["transform-class-properties", "transform-object-rest-spread"]
     }
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { ReCaptcha } from "react-recaptcha-google";
 
-export default (props) => {
+export default props => {
   const {
     sendMail,
     onChange,
@@ -10,7 +10,7 @@ export default (props) => {
     showResponse,
     onLoadRecaptcha,
     verifyCallback,
-    setCaptcha,
+    setCaptcha
   } = props;
 
   return (
@@ -27,7 +27,7 @@ export default (props) => {
               className="form-control"
               id="name"
               name="name"
-              onChange={(ev) => onChange(ev, "name")}
+              onChange={ev => onChange(ev, "name")}
               style={{ border: borders.nameErrorBorder }}
             />
           </div>
@@ -40,7 +40,7 @@ export default (props) => {
               className="form-control"
               id="email"
               name="email"
-              onChange={(ev) => onChange(ev, "email")}
+              onChange={ev => onChange(ev, "email")}
               style={{ border: borders.emailErrorBorder }}
             />
             <small>Your information will never be shared. Full stop.</small>
@@ -54,7 +54,7 @@ export default (props) => {
               className="form-control"
               id="message"
               name="message"
-              onChange={(ev) => onChange(ev, "message")}
+              onChange={ev => onChange(ev, "message")}
               style={{ border: borders.messageErrorBorder }}
             />
           </div>
@@ -66,7 +66,7 @@ export default (props) => {
           </div>
 
           <ReCaptcha
-            ref={(ev) => setCaptcha(ev)}
+            ref={ev => setCaptcha(ev)}
             size="normal"
             data-theme="light"
             render="explicit"
