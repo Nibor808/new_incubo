@@ -97,7 +97,7 @@ export default () => {
               <a
                 href="https://github.com/Nibor808"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
                 github
               </a>

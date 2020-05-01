@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
+import robin from "../styles/images/robin.jpg";
 
 export default () => {
   const [years, setYears] = useState("");
@@ -58,7 +59,7 @@ const STATS = {
       <div className="col-sm-10 col-xl-8 top-box">
         <div className="img-box">
           <img
-            src="/images/robin.jpg"
+            src={robin}
             alt="me"
             height="300px"
             width="300px"

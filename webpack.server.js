@@ -16,8 +16,8 @@ if (DEV) {
   instanceDir = "build-dev";
   mode = "development";
 } else {
-  outputDir = path.resolve(__dirname, "./dist");
-  instanceDir = "dist";
+  outputDir = path.resolve(__dirname, "./public");
+  instanceDir = "public";
   mode = "production";
 }
 

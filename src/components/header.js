@@ -1,4 +1,7 @@
 import React from "react";
+import logo from "../styles/images/incubo_logo.jpg";
+import twitter from "../styles/images/twitter_circle.jpg";
+import linkedIn from "../styles/images/linkedin.jpg";
 
 export default (props) => {
   const { toPortfolio, toContact } = props;
@@ -22,7 +25,7 @@ export default (props) => {
           <a href="" className="navbar-brand">
             <img
               id="logo-img"
-              src="/images/incubo_logo.jpg"
+              src={logo}
               alt="incubo web solutions logo"
               className="img-fluid"
               onClick={toTop}
@@ -60,9 +63,9 @@ export default (props) => {
                 className="nav-link"
                 href="https://twitter.com/incuboweb"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
-                <img src="/images/twitter_circle.jpg" alt="incubo twitter" />
+                <img src={twitter} alt="incubo twitter" />
               </a>
             </div>
 
@@ -71,9 +74,9 @@ export default (props) => {
                 className="nav-link"
                 href="https://www.linkedin.com/in/robinerickson08/"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
-                <img src="/images/linkedin.jpg" alt="Robin Erickson linkedIn" />
+                <img src={linkedIn} alt="Robin Erickson linkedIn" />
               </a>
             </div>
           </div>

@@ -17,7 +17,7 @@ if (DEV) {
   outputDir = path.resolve(__dirname, "./build-dev");
   mode = "development";
 } else {
-  outputDir = path.resolve(__dirname, "./dist");
+  outputDir = path.resolve(__dirname, "./public");
   mode = "production";
 }
 

@@ -1,5 +1,19 @@
 import React from "react";
 import "lazysizes";
+import odfFullThumb from "../styles/images/odf-full-thumb.jpg";
+import odfFull from "../styles/images/odf-full.jpg";
+import odfFormsThumb from "../styles/images/odf-forms-thumb.jpg";
+import odfForms from "../styles/images/odf-forms.jpg";
+import odfAccessSchedulerThumb from "../styles/images/odf-access-scheduler-thumb.jpg";
+import odfAccessScheduler from "../styles/images/odf-access-scheduler.jpg";
+import jesstech from "../styles/images/jesstech.jpg";
+import lakeshore from "../styles/images/lakeshore.jpg";
+import incuboOld from "../styles/images/incubo_old.jpg";
+import casemon from "../styles/images/casemon.jpg";
+import appStoreBadge from "../styles/images/appstorebadge.svg";
+import plus3Calc from "../styles/images/plus3-calc.jpg";
+import plus3Curr from "../styles/images/plus3-curr.jpg";
+import plus3Units from "../styles/images/plus3-units.jpg";
 
 export const list2017 = [
   {
@@ -10,7 +24,7 @@ export const list2017 = [
           <a
             href="https://www.onlinedivorceforms.ca/"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             ODF
           </a>{" "}
@@ -48,33 +62,30 @@ export const list2017 = [
         <div className="row">
           <div className="col">
             <img
-              src="/images/odf-full-thumb.jpg"
-              data-src="/images/odf-full-thumb.jpg"
+              src={odfFullThumb}
               className="img-fluid clickable lazyload"
               alt="Online Divorce Forms Landing Page"
-              data-text="/images/odf-full.jpg"
+              data-text={odfFull}
               onClick={(ev) => handleClick(ev)}
             />
           </div>
 
           <div className="col">
             <img
-              src="/images/odf-forms-thumb.jpg"
-              data-src="/images/odf-forms-thumb.jpg"
+              src={odfFormsThumb}
               className="img-fluid clickable lazyload"
               alt={`Online Divorce Forms User's Forms List`}
-              data-text="/images/odf-forms.jpg"
+              data-text={odfForms}
               onClick={(ev) => handleClick(ev)}
             />
           </div>
 
           <div className="col">
             <img
-              src="/images/odf-access-scheduler-thumb.jpg"
-              data-src="/images/odf-access-scheduler-thumb.jpg"
+              src={odfAccessSchedulerThumb}
               className="img-fluid clickable lazyload"
               alt="Online Divorce Forms Access Scheduler"
-              data-text="/images/odf-access-scheduler.jpg"
+              data-text={odfAccessScheduler}
               onClick={(ev) => handleClick(ev)}
             />
           </div>
@@ -88,7 +99,7 @@ export const list2017 = [
       <a
         href="https://github.com/Nibor808/jess-blog"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
       >
         git
       </a>
@@ -112,9 +123,7 @@ export const list2017 = [
     },
     image: () => (
       <img
-        src="/images/jesstech.jpg"
-        data-src="/images/jesstech.jpg"
-        data-src="/images/jesstech.jpg"
+        src={jesstech}
         className="img-fluid lazyload"
         alt="Jesstech Landing Page"
       />
@@ -134,8 +143,7 @@ export const list2017 = [
     ),
     image: () => (
       <img
-        src="/images/lakeshore.jpg"
-        data-src="/images/lakeshore.jpg"
+        src={lakeshore}
         className="img-fluid lazyload"
         alt="Lakeshore Electric Landing Page"
       />
@@ -147,7 +155,7 @@ export const list2017 = [
       <a
         href="https://github.com/Nibor808/incubo"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
       >
         git
       </a>
@@ -161,8 +169,7 @@ export const list2017 = [
     ),
     image: () => (
       <img
-        src="/images/incubo_old.jpg"
-        data-src="/images/incubo_old.jpg"
+        src={incuboOld}
         className="img-fluid lazyload"
         alt="Old Incubo Landing Page"
       />
@@ -177,7 +184,7 @@ export const list2016 = [
       <a
         href="https://github.com/Nibor808/casemon-mvp"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
       >
         git
       </a>
@@ -187,9 +194,13 @@ export const list2016 = [
         <p key="main1">
           I was engaged by a start up to develop the MVP for a web app that
           allows attorneys to receive notifications via email or text whenever
-          there's an update to one of their cases. The production deployment was
+          there"s an update to one of their cases. The production deployment was
           done by{" "}
-          <a href="https://ryanfunduk.com/" target="_blank" rel="noopener">
+          <a
+            href="https://ryanfunduk.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Ryan Funduk
           </a>
           .
@@ -206,8 +217,7 @@ export const list2016 = [
     },
     image: () => (
       <img
-        src="/images/casemon.jpg"
-        data-src="/images/casemon.jpg"
+        src={casemon}
         className="img-fluid lazyload"
         alt="Casemon Landing Page"
       />
@@ -219,7 +229,7 @@ export const list2016 = [
       <a
         href="https://github.com/Nibor808/plus3"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
       >
         git
       </a>
@@ -228,11 +238,10 @@ export const list2016 = [
       <a
         href="https://itunes.apple.com/ca/app/+3/id1095135903?mt=8"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
       >
         <img
-          src="/images/appstorebadge.svg"
-          data-src="/images/appstorebadge.svg"
+          src={appStoreBadge}
           id="badge"
           className="img-fluid lazyload"
           alt="app store badge"
@@ -259,8 +268,8 @@ export const list2016 = [
         <div className="row">
           <div className="col">
             <img
-              src="/images/plus3-calc.jpg"
-              data-src="/images/plus3-calc.jpg"
+              src={plus3Calc}
+              data-text={plus3Calc}
               className="img-fluid clickable lazyload"
               alt="+3 Calculator"
               onClick={(ev) => handleClick(ev)}
@@ -269,8 +278,8 @@ export const list2016 = [
 
           <div className="col">
             <img
-              src="/images/plus3-curr.jpg"
-              data-src="/images/plus3-curr.jpg"
+              src={plus3Curr}
+              data-text={plus3Curr}
               className="img-fluid clickable lazyload"
               alt="+3 Currency Converter"
               onClick={(ev) => handleClick(ev)}
@@ -279,8 +288,8 @@ export const list2016 = [
 
           <div className="col">
             <img
-              src="/images/plus3-units.jpg"
-              data-src="/images/plus3-units.jpg"
+              src={plus3Units}
+              data-text={plus3Units}
               className="img-fluid clickable lazyload"
               alt="+3 Units Converter"
               onClick={(ev) => handleClick(ev)}
