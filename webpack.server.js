@@ -16,8 +16,8 @@ if (DEV) {
   instanceDir = "build-dev";
   mode = "development";
 } else {
-  outputDir = path.resolve(__dirname, "./public");
-  instanceDir = "public";
+  outputDir = path.resolve(__dirname, "./build-prod");
+  instanceDir = "build-prod";
   mode = "production";
 }
 
@@ -27,7 +27,9 @@ const plugins = [
     safe: false
   }),
   new WebpackShellPlugin({
-    onBuildEnd: [`nodemon ${instanceDir}/server.js --watch ${instanceDir}`]
+    onBuildEnd: DEV
+      ? [`nodemon ${instanceDir}/server.js --watch ${instanceDir}`]
+      : []
   })
 ];
 

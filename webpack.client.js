@@ -17,7 +17,7 @@ if (DEV) {
   outputDir = path.resolve(__dirname, "./build-dev");
   mode = "development";
 } else {
-  outputDir = path.resolve(__dirname, "./public");
+  outputDir = path.resolve(__dirname, "./build-prod");
   mode = "production";
 }
 
@@ -86,13 +86,13 @@ const rules = [
   }
 ];
 
-if (!DEV) {
-  rules.push({
-    test: /\.(jpg|png|gif|svg)$/,
-    loader: "image-webpack-loader",
-    enforce: "pre"
-  });
-}
+// if (!DEV) {
+//   rules.push({
+//     test: /\.(jpg|png|gif|svg)$/,
+//     loader: "image-webpack-loader",
+//     enforce: "pre"
+//   });
+// }
 
 module.exports = {
   mode,
