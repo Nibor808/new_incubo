@@ -23,7 +23,7 @@ if (DEV) {
 
 const plugins = [
   new Dotenv({
-    path: "./.env",
+    path: "/.env",
     safe: false
   }),
   new WebpackShellPlugin({
