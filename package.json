@@ -22,7 +22,8 @@
     "prod-build-server": "webpack --config webpack.server.js",
     "prod-build-client": "webpack --config webpack.client.js",
     "prod-build": "run-p prod-build-server prod-build-client",
-    "production": "npm run prod-clean && npm run prod-copy && NODE_ENV=production npm run prod-build"
+    "production": "npm run prod-clean && npm run prod-copy && NODE_ENV=production npm run prod-build",
+    "start": "node server.js"
   },
   "author": "Robin Erickson",
   "license": "ISC",
