@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import validateForm from "../utils/validate_form";
-import EmailForm from "../utils/email_form";
+import EmailForm from "./email_form";
 
 export default () => {
   const [name, setName] = useState("");

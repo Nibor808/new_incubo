@@ -4,7 +4,6 @@
   "description": "incubo web solutions site",
   "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint './src/**'",
     "format": "prettier --write ./src",
     "clean-all": "npm run lint && npm run format",
@@ -23,6 +22,7 @@
     "prod-build-client": "webpack --config webpack.client.js",
     "prod-build": "run-p prod-build-server prod-build-client",
     "production": "npm run prod-clean && npm run prod-copy && NODE_ENV=production npm run prod-build",
+    "install": "npm i --unsafe-perms",
     "start": "node server.js"
   },
   "author": "Robin Erickson",
