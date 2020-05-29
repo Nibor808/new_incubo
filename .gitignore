@@ -1,15 +1,13 @@
 node_modules
 *.log
 .swp
-public/
 build-dev/
+build-prod/
 
 src/webpack-assets.json
 .DS_Store
 .vscode/
 .idea/
-!src/logs/.gitkeep
 package-lock.json
-*.pdf
 *.env
 __snapshots__/
