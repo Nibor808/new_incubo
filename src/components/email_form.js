@@ -47,7 +47,7 @@ export default props => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="description">Message</label>
+            <label htmlFor="message">Message</label>
             <span className="error">{errors.messageError}</span>
             <textarea
               rows={3}
